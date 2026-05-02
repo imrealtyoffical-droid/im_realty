@@ -4,14 +4,55 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight, Plus, Send } from "lucide-react";
 import { useState } from "react";
+import { sendEmail } from "@/app/actions/email";
 
 const Contact = () => {
   const [selectedProject, setSelectedProject] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
   const projects = [
     "Elevation",
     "Sunraj Solitaire",
   ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !selectedProject || !formData.message) {
+      setStatus({ type: "error", message: "Please fill in all fields." });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setStatus({ type: null, message: "" });
+
+    try {
+      const result = await sendEmail({
+        ...formData,
+        project: selectedProject,
+      });
+
+      if (result.success) {
+        setStatus({ type: "success", message: "Request transmitted successfully." });
+        setFormData({ name: "", email: "", message: "" });
+        setSelectedProject("");
+      } else {
+        setStatus({ type: "error", message: result.error || "Failed to transmit request." });
+      }
+    } catch (error) {
+      setStatus({ type: "error", message: "An unexpected error occurred." });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="bg-black min-h-screen w-full flex flex-col lg:flex-row overflow-hidden font-sans selection:bg-primary-red selection:text-white">
@@ -57,12 +98,15 @@ const Contact = () => {
           </div>
 
           {/* --- High Visibility Contact Form --- */}
-          <form className="max-w-2xl space-y-10 border-t border-white/10 pt-12">
+          <form onSubmit={handleSubmit} className="max-w-2xl space-y-10 border-t border-white/10 pt-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="relative group">
                 <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Name / Entity</label>
                 <input
                   type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="Enter your name"
                   className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/50 focus:outline-none focus:border-primary-red transition-all duration-500"
                 />
@@ -71,6 +115,9 @@ const Contact = () => {
                 <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Secure Email</label>
                 <input
                   type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="Enter email address"
                   className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/50 focus:outline-none focus:border-primary-red transition-all duration-500"
                 />
@@ -80,6 +127,7 @@ const Contact = () => {
             <div className="relative group">
               <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Project Selection</label>
               <select
+                required
                 value={selectedProject}
                 onChange={(e) => setSelectedProject(e.target.value)}
                 className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest focus:outline-none focus:border-primary-red transition-all appearance-none text-white font-medium"
@@ -95,18 +143,29 @@ const Contact = () => {
             <div className="relative group">
               <label className="text-[8px] uppercase tracking-widest text-primary-red font-bold mb-2 block">Message / Intent</label>
               <textarea
+                required
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 placeholder="Describe your architectural vision"
                 rows={3}
                 className="w-full bg-transparent border-b border-white/30 py-3 text-[10px] uppercase tracking-widest placeholder:text-white/50 focus:outline-none focus:border-primary-red transition-all duration-500 resize-none"
               />
             </div>
 
+            {status.message && (
+              <div className={`text-[10px] uppercase tracking-widest ${status.type === "success" ? "text-green-500" : "text-primary-red"}`}>
+                {status.message}
+              </div>
+            )}
+
             <motion.button
+              type="submit"
+              disabled={isSubmitting}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full md:w-auto px-12 py-4 bg-primary-red text-[10px] font-bold uppercase tracking-[0.5em] flex items-center justify-center space-x-6 hover:bg-white hover:text-black transition-all duration-700 shadow-xl shadow-primary-red/10"
+              className={`w-full md:w-auto px-12 py-4 bg-primary-red text-[10px] font-bold uppercase tracking-[0.5em] flex items-center justify-center space-x-6 hover:bg-white hover:text-black transition-all duration-700 shadow-xl shadow-primary-red/10 ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}`}
             >
-              <span>Transmit Request</span>
+              <span>{isSubmitting ? "Transmitting..." : "Transmit Request"}</span>
               <Send size={14} />
             </motion.button>
           </form>
