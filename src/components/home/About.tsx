@@ -42,12 +42,12 @@ const About = () => {
             <span className="text-[80px] md:text-[180px] font-serif text-white/5 absolute -top-16 md:-top-32 -left-4 md:-left-16 pointer-events-none">
               01
             </span>
-            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter uppercase leading-none mb-8 md:mb-12 relative z-10">
+            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter uppercase leading-none mb-8 md:mb-12 relative z-10 underline decoration-primary-red/60 decoration-2 underline-offset-[14px]">
               A New <br /> 
               <span className="text-primary-red italic">Standard</span> <br />
               In Luxury
             </h2>
-            <div className="w-16 md:w-20 h-[1px] bg-primary-red mb-8 md:mb-12" />
+            {/* <div className="w-16 md:w-20 h-[1px] bg-primary-red mb-8 md:mb-12" /> */}
           </motion.div>
 
           <div className="lg:col-span-5 space-y-6 pt-0 md:pt-12">
@@ -180,9 +180,9 @@ const About = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="text-4xl md:text-7xl font-serif mb-12 italic leading-tight"
+                className="text-3xl md:text-5xl font-serif mb-12 italic leading-tight"
               >
-                "Space is not just where we live, <br /> but how we feel."
+                "A Seamless Symphony of <br /> Enterprise and Everyday Living."
               </motion.h3>
               <motion.div 
                 initial={{ opacity: 0 }}
@@ -192,10 +192,13 @@ const About = () => {
                 className="space-y-8 text-silver/60 text-sm leading-loose max-w-xl"
               >
                 <p>
-                  I'M Realty was born from a desire to challenge the status quo of conventional real estate. We believe that true luxury lies in the harmony between architectural innovation and human experience.
+                  Born from humble beginnings and built into a strong foundation within a year, I M REALTY stands as a vision turned reality.
                 </p>
                 <p>
-                  As a new force in the industry, we bring a fresh perspective that prioritizes sustainability, modern aesthetics, and unparalleled craftsmanship. Every project we undertake is a promise to deliver excellence without compromise.
+                  From humble beginnings to a powerful foundation in just one year, I M REALTY is built on vision, driven by execution, and defined by the value we create.
+                </p>
+                <p>
+                  Behind every I M REALTY success is a team that aligns market insight, strategy, and execution; ensuring every transaction unfolds seamlessly across industrial, commercial, and residential spaces. Every detail is handled with intent, blending precision and expertise to deliver outcomes that are both valuable and enduring.
                 </p>
                 <Link href="/contact">
                   <motion.button 

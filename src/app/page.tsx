@@ -6,6 +6,7 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Projects from "@/components/home/Projects";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Features from "@/components/home/Features";
 import Vision from "@/components/home/Vision";
 import Footer from "@/components/layout/Footer";
@@ -39,6 +40,7 @@ export default function Home() {
           <Hero />
           <About />
           <Projects />
+          <WhyChooseUs />
           <Features />
           <Vision />
           <Footer />

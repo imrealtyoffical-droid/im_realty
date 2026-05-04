@@ -30,26 +30,29 @@ const Hero = () => {
       {/* Grid Lines Overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none">
         <div className="h-full w-[1px] bg-white/10 absolute right-4 md:right-32 top-0 hidden md:block" />
-        <div className="w-full h-[1px] bg-white/10 absolute top-20 md:top-32 left-0" />
+        <div className="w-full h-[1px] bg-white/10 absolute top-20 md:top-24 left-0" />
         <div className="h-full w-[1px] bg-white/5 absolute left-4 md:left-24 top-0 hidden md:block" />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 h-full flex items-center px-6 md:px-24">
-        <div className="max-w-4xl">
+      <div className="relative z-20 h-full flex items-center px-6 md:px-24 pb-20 md:pb-10">
+        <div className="max-w-5xl">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
-            <span className="text-6xl md:text-[150px] font-serif text-white/5 absolute -top-12 md:-top-32 -left-2 md:-left-12">
+            {/* <span className="text-6xl md:text-[120px] font-serif text-white/5 absolute -top-12 md:-top-24 -left-2 md:-left-8">
               01
-            </span>
-            <h1 className="text-3xl md:text-7xl font-serif leading-tight mb-8 tracking-tight">
-              Architectural <br />
-              <span className="italic text-primary-red">Excellence</span> <br />
-              Begins Here.
+            </span> */}
+            <h1 className="text-3xl md:text-6xl font-serif leading-[1.1] mb-6 tracking-tight">
+              Industrial. Commercial. <br />
+              Residential. <br />
+              <span className="italic text-primary-red">One Trusted</span> Realty Partner.
             </h1>
+            <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/80 mb-8 max-w-xl leading-relaxed">
+              From industrial hubs to luxury residences, we curate spaces that reflect your ambition and legacy.
+            </p>
           </motion.div>
 
           <motion.div
@@ -88,7 +91,7 @@ const Hero = () => {
       </div>
 
       {/* Bottom Carousel / Gallery Tabs */}
-      <div className="absolute bottom-0 left-0 w-full z-30 px-6 md:px-24 pb-12">
+      <div className="absolute bottom-0 left-0 w-full z-30 px-6 md:px-24 pb-6 md:pb-8">
         <div className="max-w-[1400px] mx-auto overflow-x-auto no-scrollbar flex space-x-4 md:space-x-8">
           {carouselItems.map((item, index) => (
             <motion.div

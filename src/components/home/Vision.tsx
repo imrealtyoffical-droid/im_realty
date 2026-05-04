@@ -16,10 +16,10 @@ const Vision = () => {
     <section className="relative h-screen w-full overflow-hidden bg-black text-white font-sans">
       {/* Background with cinematic overlay */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/about.png" 
-          alt="Visionary Architecture" 
-          fill 
+        <Image
+          src="/images/about.png"
+          alt="Visionary Architecture"
+          fill
           className="object-cover brightness-[0.3] scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
@@ -29,22 +29,22 @@ const Vision = () => {
       <div className="absolute inset-0 z-10 pointer-events-none opacity-10 md:opacity-20">
         <div className="h-full w-[1px] bg-white absolute right-8 md:right-32 top-0 hidden md:block" />
         <div className="h-full w-[1px] bg-white absolute left-8 md:left-32 top-0 hidden md:block" />
-        <div className="w-full h-[1px] bg-white absolute top-1/2 left-0" />
+        <div className="h-[1px] bg-white absolute top-1/2 left-8 md:left-32 right-8 md:right-32" />
       </div>
 
       {/* Vertical Data - Left */}
-      <div className="absolute left-8 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center space-y-12 mix-blend-difference">
-        <span className="text-[10px] uppercase tracking-[0.5em] rotate-180 [writing-mode:vertical-lr] text-primary-red font-bold">
+      <div className="absolute left-8 md:left-16 top-1/2 -translate-y-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center space-y-0 mix-blend-difference">
+        <span className="text-[10px] uppercase tracking-[0.6em] rotate-180 [writing-mode:vertical-lr] text-primary-red font-bold">
           Coordinates 46.2044° N
         </span>
         <div className="w-[1px] h-20 bg-white/30" />
-        <span className="text-[10px] uppercase tracking-[0.5em] rotate-180 [writing-mode:vertical-lr] text-white/40">
+        <span className="text-[10px] uppercase tracking-[0.6em] rotate-180 [writing-mode:vertical-lr] text-white/40">
           Altitude 1,200m
-        </span>
-      </div>
+  </span>
+</div>
 
       {/* Vertical Data - Right */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 z-20 hidden md:flex flex-col items-center space-y-12">
+      <div className="absolute right-8 md:right-18 top-1/2 -translate-y-1/2 translate-x-1/2 z-20 hidden md:flex flex-col items-center space-y-0">
         <div className="w-[1px] h-20 bg-white/30" />
         <span className="text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] text-white/40">
           Established 2024
@@ -53,7 +53,7 @@ const Vision = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 h-full flex items-center px-6 md:px-40">
+      <div className="relative z-20 h-full flex items-center px-6 md:px-40 pb-32 md:pb-64">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -64,18 +64,18 @@ const Vision = () => {
             <span className="text-[80px] md:text-[200px] font-serif text-white/5 absolute -top-12 md:-top-48 -left-2 md:-left-20 pointer-events-none">
               02
             </span>
-            <h2 className="text-2xl md:text-7xl font-serif leading-[1.1] mb-8 md:mb-12">
-              The Architecture <br />
-              <span className="italic text-primary-red">of Future </span> <br />
-              Humanity.
+            <h2 className="text-2xl md:text-6xl font-serif leading-[1.1] mb-8 md:mb-12">
+              Connecting Opportunity <br />
+              <span className="italic text-primary-red">with Execution </span> <br />
+              Through Strategy.
             </h2>
-            
-            <p className="text-[9px] md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] text-white/40 mb-8 md:mb-12 max-w-lg leading-relaxed">
-              We don't just build structures; we curate the physical manifestation of your strategic intent. Every line is a decision. Every shadow is a luxury.
+
+            <p className="text-[8px] md:text-xs uppercase tracking-[0.1em] md:tracking-[0.2em] text-white/40 mb-8 md:mb-12 max-w-lg leading-relaxed">
+              From industrial corridors to luxury residences, we connect opportunity with execution through sharp market intelligence. Every space we close is a statement of strategy, growth, and legacy.
             </p>
 
             <Link href="/contact">
-              <motion.button 
+              <motion.button
                 whileHover={{ x: 10 }}
                 className="group flex items-center space-x-4 md:space-x-6 text-[8px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.6em] font-bold"
               >
@@ -124,11 +124,11 @@ const Vision = () => {
           </div>
 
           <div className="flex flex-col items-start md:items-end space-y-4 w-full md:w-auto">
-             <div className="flex items-center space-x-4">
-                <div className="w-12 h-[1px] bg-white/20" />
-                <span className="text-[10px] uppercase tracking-[0.4em] text-white/40">Our Philosophy</span>
-             </div>
-             <h3 className="text-xl md:text-3xl font-serif italic text-silver">0% Compromise</h3>
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-[1px] bg-white/20" />
+              <span className="text-[10px] uppercase tracking-[0.4em] text-white/40">Our Philosophy</span>
+            </div>
+            <h3 className="text-xl md:text-3xl font-serif italic text-silver">0% Compromise</h3>
           </div>
         </div>
       </div>

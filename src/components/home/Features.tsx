@@ -69,7 +69,7 @@ const Features = () => {
               transition={{ duration: 1 }}
             >
               <span className="text-[60px] md:text-[180px] font-serif text-white/5 absolute -top-12 md:-top-32 -left-2 md:-left-16 pointer-events-none">
-                03
+                04
               </span>
               <h2 className="text-3xl md:text-8xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12 relative z-10">
                 Advanced <br /> 

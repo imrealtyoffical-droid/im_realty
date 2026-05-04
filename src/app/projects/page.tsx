@@ -1,7 +1,7 @@
 import Navbar from "@/components/layout/Navbar";
 import Projects from "@/components/home/Projects";
+import CommercialProject from "@/components/home/CommercialProject";
 import Footer from "@/components/layout/Footer";
-import { motion } from "framer-motion";
 
 export default function ProjectsPage() {
   return (
@@ -19,6 +19,7 @@ export default function ProjectsPage() {
       </div>
 
       <Projects />
+      <CommercialProject />
 
       {/* Additional Page Content: Process */}
       <div className="bg-[#0a0a0a] py-32 px-6 md:px-24">

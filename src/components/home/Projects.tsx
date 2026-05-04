@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Plus } from "lucide-react";
@@ -43,6 +44,59 @@ const projectModules = [
   }
 ];
 
+const ProjectFeaturedVideo = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const isInView = useInView(videoRef, { amount: 0.3 });
+
+  useEffect(() => {
+    if (isInView) {
+      videoRef.current?.play().catch(() => {});
+    } else {
+      videoRef.current?.pause();
+    }
+  }, [isInView]);
+
+  return (
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-16 mb-32 md:mb-64">
+      <motion.div 
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1 }}
+        className="w-full lg:w-1/2 relative"
+      >
+        <span className="text-primary-red text-[10px] font-bold tracking-[0.5em] uppercase mb-6 block">Vision in Motion / 2026</span>
+        <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.9]">
+          The <br /> <span className="text-white/10 italic font-serif lowercase block mt-2">Blueprint</span>
+        </h2>
+        <div className="mt-12 max-w-sm">
+          <div className="w-16 h-[1px] bg-primary-red mb-8" />
+          <p className="text-[10px] uppercase tracking-[0.3em] text-silver/40 leading-loose">
+            Witness the transformation of strategy into structural reality. Every frame captures our dedication to high-performance real estate.
+          </p>
+        </div>
+      </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.2 }}
+        className="w-full lg:w-1/2 max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px] overflow-hidden border border-white/10 bg-[#0a0a0a] relative"
+      >
+        <video 
+          ref={videoRef}
+          src="/images/advertice.mp4"
+          loop 
+          playsInline
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+      </motion.div>
+    </div>
+  );
+};
+
 const Projects = () => {
   return (
     <section className="bg-black py-24 md:py-40 px-6 md:px-24 overflow-hidden relative">
@@ -54,6 +108,8 @@ const Projects = () => {
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
+        <ProjectFeaturedVideo />
+        
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-32 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
