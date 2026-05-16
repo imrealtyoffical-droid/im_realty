@@ -158,7 +158,7 @@ const About = () => {
               <Image src="/images/about.png" alt="Founders" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               <div className="absolute bottom-10 left-10">
-                <p className="text-3xl font-serif mb-1">Kaustubh & sachin</p>
+                <p className="text-3xl font-serif mb-1">Kaustubh & Sachin</p>
                 <div className="flex items-center space-x-4">
                   <div className="w-8 h-[1px] bg-primary-red" />
                   <p className="text-[10px] text-primary-red uppercase tracking-[0.3em] font-bold">Founders & Visionaries</p>
