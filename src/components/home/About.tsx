@@ -32,7 +32,7 @@ const About = () => {
 
         {/* --- Top Section: Heading & Modular Cards --- */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 md:mb-48 items-start">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -43,7 +43,7 @@ const About = () => {
               01
             </span>
             <h2 className="text-4xl md:text-8xl font-bold tracking-tighter uppercase leading-none mb-8 md:mb-12 relative z-10 underline decoration-primary-red/60 decoration-2 underline-offset-[14px]">
-              A New <br /> 
+              A New <br />
               <span className="text-primary-red italic">Standard</span> <br />
               In Luxury
             </h2>
@@ -52,7 +52,7 @@ const About = () => {
 
           <div className="lg:col-span-5 space-y-6 pt-0 md:pt-12">
             <Link href="/about">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -69,7 +69,7 @@ const About = () => {
             </Link>
 
             <Link href="/about">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -89,14 +89,14 @@ const About = () => {
 
         {/* --- Middle Section: Stats with Thumbnails --- */}
         <div className="mb-24 md:mb-48 relative">
-           <div className="absolute -right-16 top-0 hidden xl:flex flex-col items-center space-y-12">
+          <div className="absolute -right-16 top-0 hidden xl:flex flex-col items-center space-y-12">
             <span className="text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] text-white/20">
               Vision / Core
             </span>
             <div className="w-[1px] h-32 bg-white/10" />
           </div>
 
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -149,7 +149,7 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -165,9 +165,9 @@ const About = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             <div className="lg:col-span-7">
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -175,7 +175,7 @@ const About = () => {
               >
                 The Vision / 01
               </motion.span>
-              <motion.h3 
+              <motion.h3
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -184,7 +184,7 @@ const About = () => {
               >
                 "A Seamless Symphony of <br /> Enterprise and Everyday Living."
               </motion.h3>
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -201,7 +201,7 @@ const About = () => {
                   Behind every I M REALTY success is a team that aligns market insight, strategy, and execution; ensuring every transaction unfolds seamlessly across industrial, commercial, and residential spaces. Every detail is handled with intent, blending precision and expertise to deliver outcomes that are both valuable and enduring.
                 </p>
                 <Link href="/contact">
-                  <motion.button 
+                  <motion.button
                     whileHover={{ x: 10 }}
                     className="flex items-center space-x-6 text-white hover:text-primary-red transition-all pt-8 group"
                   >
@@ -217,7 +217,7 @@ const About = () => {
         </div>
 
       </div>
-      
+
       {/* Technical Scanlines Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02] z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
     </section>

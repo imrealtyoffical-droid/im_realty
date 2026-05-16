@@ -4,7 +4,7 @@
   --color-primary-red: #e63946;
   --color-silver: #e5e5e5;
   --color-off-black: #0a0a0a;
-  
+
   --font-serif: var(--font-cormorant), serif;
   --font-sans: var(--font-inter), sans-serif;
 
@@ -13,13 +13,25 @@
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slide-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 :root {
@@ -35,7 +47,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -67,3 +84,367 @@ h1, h2, h3, h4, h5, h6 {
   /* A very basic star-ish shape to simulate leaf tips */
 }
 
+/* ============================================
+   LIGHT THEME OVERRIDES
+   These rules ONLY activate when html has class="light".
+   The dark theme (default) is completely untouched above.
+   ============================================ */
+
+/* --- Global Transition for Smooth Theme Switch --- */
+html.light *,
+html.light *::before,
+html.light *::after {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, fill 0.5s ease, stroke 0.5s ease;
+}
+
+/* --- Root Variables Override --- */
+html.light {
+  --background: #f5f0ea;
+  --foreground: #111111;
+}
+
+/* --- Body Background & Text --- */
+html.light body {
+  background-color: #f5f0ea;
+  color: #111111;
+}
+
+/* --- Background Color Overrides --- */
+html.light .bg-black {
+  background-color: #f5f0ea !important;
+}
+
+html.light .bg-off-black {
+  background-color: #f5f0ea !important;
+}
+
+html.light .bg-\[\#0a0a0a\] {
+  background-color: #f5f0ea !important;
+}
+
+html.light .bg-\[\#0f0f0f\] {
+  background-color: #eae4dc !important;
+}
+
+html.light .bg-\[\#050505\] {
+  background-color: #efe9e2 !important;
+}
+
+/* --- Text Color Overrides (ENHANCED: much stronger contrast) --- */
+html.light .text-white {
+  color: #111111 !important;
+}
+
+html.light .text-white\/90 {
+  color: rgba(17, 17, 17, 0.95) !important;
+}
+
+html.light .text-white\/80 {
+  color: rgba(17, 17, 17, 0.88) !important;
+}
+
+html.light .text-white\/70 {
+  color: rgba(17, 17, 17, 0.75) !important;
+}
+
+html.light .text-white\/50 {
+  color: rgba(17, 17, 17, 0.65) !important;
+}
+
+html.light .text-white\/40 {
+  color: rgba(17, 17, 17, 0.55) !important;
+}
+
+html.light .text-white\/20 {
+  color: rgba(17, 17, 17, 0.35) !important;
+}
+
+html.light .text-white\/10 {
+  color: rgba(17, 17, 17, 0.2) !important;
+}
+
+html.light .text-white\/5 {
+  color: rgba(17, 17, 17, 0.08) !important;
+}
+
+/* --- Silver/Muted Text (ENHANCED: much more readable) --- */
+html.light .text-silver {
+  color: #2d2d2d !important;
+}
+
+html.light .text-silver\/80 {
+  color: rgba(45, 45, 45, 0.9) !important;
+}
+
+html.light .text-silver\/60 {
+  color: rgba(45, 45, 45, 0.75) !important;
+}
+
+html.light .text-silver\/50 {
+  color: rgba(45, 45, 45, 0.7) !important;
+}
+
+html.light .text-silver\/40 {
+  color: rgba(45, 45, 45, 0.65) !important;
+}
+
+/* --- Border Overrides (ENHANCED: much more visible) --- */
+html.light .border-white\/5 {
+  border-color: rgba(17, 17, 17, 0.12) !important;
+}
+
+html.light .border-white\/10 {
+  border-color: rgba(17, 17, 17, 0.18) !important;
+}
+
+html.light .border-white\/20 {
+  border-color: rgba(17, 17, 17, 0.22) !important;
+}
+
+html.light .border-white\/30 {
+  border-color: rgba(17, 17, 17, 0.28) !important;
+}
+
+/* --- Background with White Opacity (ENHANCED: visible cards/panels) --- */
+html.light .bg-white\/3 {
+  background-color: rgba(17, 17, 17, 0.04) !important;
+}
+
+html.light .bg-white\/5 {
+  background-color: rgba(17, 17, 17, 0.06) !important;
+}
+
+html.light .bg-white {
+  background-color: #1a1a1a !important;
+}
+
+html.light .bg-white.text-black {
+  color: #f5f0ea !important;
+}
+
+/* --- Gradient Overrides --- */
+html.light .from-black {
+  --tw-gradient-from: #f5f0ea !important;
+}
+
+html.light .via-transparent {
+  --tw-gradient-via: transparent !important;
+}
+
+html.light .to-black\/80 {
+  --tw-gradient-to: rgba(245, 240, 234, 0.85) !important;
+}
+
+html.light .to-black\/40 {
+  --tw-gradient-to: rgba(245, 240, 234, 0.5) !important;
+}
+
+html.light .from-black\/40 {
+  --tw-gradient-from: rgba(245, 240, 234, 0.5) !important;
+}
+
+html.light .to-black {
+  --tw-gradient-to: #f5f0ea !important;
+}
+
+html.light .to-\[\#0a0a0a\] {
+  --tw-gradient-to: #f5f0ea !important;
+}
+
+html.light .from-\[\#0a0a0a\] {
+  --tw-gradient-from: #f5f0ea !important;
+}
+
+/* --- Decorative Grid Lines (ENHANCED: more visible) --- */
+html.light .bg-white.absolute {
+  background-color: rgba(17, 17, 17, 0.6) !important;
+}
+
+html.light .bg-white\/10 {
+  background-color: rgba(17, 17, 17, 0.1) !important;
+}
+
+html.light .bg-white\/5 {
+  background-color: rgba(17, 17, 17, 0.06) !important;
+}
+
+html.light .bg-white\/30 {
+  background-color: rgba(17, 17, 17, 0.2) !important;
+}
+
+html.light .bg-white\/20 {
+  background-color: rgba(17, 17, 17, 0.15) !important;
+}
+
+/* --- Glassmorphism Light (ENHANCED: visible panels with shadow) --- */
+html.light .glass {
+  background: rgba(255, 255, 255, 0.55) !important;
+  border: 1px solid rgba(17, 17, 17, 0.12) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .glass-dark {
+  background: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(17, 17, 17, 0.1) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* --- Button & Interactive Overrides --- */
+html.light .bg-white.text-black {
+  background-color: #1a1a1a !important;
+  color: #f5f0ea !important;
+}
+
+html.light .hover\:bg-white:hover {
+  background-color: #1a1a1a !important;
+}
+
+html.light .hover\:text-black:hover {
+  color: #f5f0ea !important;
+}
+
+html.light .hover\:text-white:hover {
+  color: #f5f0ea !important;
+}
+
+html.light .hover\:bg-white\/5:hover {
+  background-color: rgba(17, 17, 17, 0.07) !important;
+}
+
+/* --- Black/Dark Overlay Backgrounds --- */
+html.light .bg-black\/60 {
+  background-color: rgba(245, 240, 234, 0.75) !important;
+}
+
+html.light .bg-black\/40 {
+  background-color: rgba(245, 240, 234, 0.5) !important;
+}
+
+/* --- Zinc Backgrounds --- */
+html.light .bg-zinc-800 {
+  background-color: #e0dbd4 !important;
+}
+
+/* --- Scanlines (hide in light mode for clean look) --- */
+html.light .opacity-\[0\.03\],
+html.light .opacity-\[0\.02\] {
+  opacity: 0 !important;
+}
+
+/* --- Contact Form Inputs (ENHANCED: strong borders & text) --- */
+html.light input,
+html.light textarea,
+html.light select {
+  color: #111111 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: rgba(17, 17, 17, 0.45) !important;
+}
+
+html.light select option {
+  background-color: #f5f0ea !important;
+  color: #111111 !important;
+}
+
+/* --- Scrollbar hide (keep consistent) --- */
+html.light .no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Logo: handled via component-level image swap, no CSS filter needed --- */
+
+/* --- Image Overlay Adjustments --- */
+html.light .brightness-\[0\.3\] {
+  filter: brightness(0.55) !important;
+}
+
+html.light .brightness-50 {
+  filter: brightness(0.65) !important;
+}
+
+/* --- Selection Color (keep red accent) --- */
+html.light ::selection {
+  background-color: #e63946;
+  color: #ffffff;
+}
+
+/* --- Mix Blend Difference Fix --- */
+html.light .mix-blend-difference {
+  mix-blend-mode: normal !important;
+}
+
+/* --- ENHANCED: Stronger card hover backgrounds --- */
+html.light .group:hover .group-hover\:text-primary-red {
+  color: #e63946 !important;
+}
+
+/* --- ENHANCED: Hero section button borders more visible --- */
+html.light .border-white\/30 {
+  border-color: rgba(17, 17, 17, 0.3) !important;
+}
+
+/* --- ENHANCED: Separator lines in light mode --- */
+html.light .bg-gradient-to-b {
+  opacity: 0.7;
+}
+
+/* --- ENHANCED: Primary red accent stays vibrant --- */
+html.light .text-primary-red {
+  color: #d42f3b !important;
+}
+
+html.light .border-primary-red {
+  border-color: #d42f3b !important;
+}
+
+html.light .bg-primary-red {
+  background-color: #d42f3b !important;
+}
+
+html.light .border-primary-red\/50 {
+  border-color: rgba(212, 47, 59, 0.5) !important;
+}
+
+html.light .border-primary-red\/30 {
+  border-color: rgba(212, 47, 59, 0.3) !important;
+}
+
+html.light .border-primary-red\/20 {
+  border-color: rgba(212, 47, 59, 0.25) !important;
+}
+
+/* --- ENHANCED: Grayscale images slightly brighter in light --- */
+html.light .grayscale {
+  filter: grayscale(100%) brightness(1.1) !important;
+}
+
+html.light .group:hover .group-hover\:grayscale-0 {
+  filter: grayscale(0%) brightness(1.05) !important;
+}
+
+/* --- ENHANCED: Intro loader stays dark --- */
+html.light .fixed.inset-0.z-\[9999\] {
+  background-color: #0a0a0a !important;
+}
+
+/* --- ENHANCED: Mobile menu overlay stays strong --- */
+html.light .fixed.inset-0.z-40 {
+  background-color: #f5f0ea !important;
+}
+
+html.light .fixed.inset-0.z-40 .text-3xl {
+  color: #111111 !important;
+}
+
+/* --- ENHANCED: Feature card icon containers --- */
+html.light .shadow-xl.shadow-primary-red\/5 {
+  box-shadow: 0 8px 25px rgba(212, 47, 59, 0.08) !important;
+}
+
+/* --- ENHANCED: Footer subtle background difference --- */
+html.light .border-t.border-white\/5 {
+  border-top-color: rgba(17, 17, 17, 0.15) !important;
+}
+

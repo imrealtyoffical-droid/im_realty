@@ -50,7 +50,7 @@ const ProjectFeaturedVideo = () => {
 
   useEffect(() => {
     if (isInView) {
-      videoRef.current?.play().catch(() => {});
+      videoRef.current?.play().catch(() => { });
     } else {
       videoRef.current?.pause();
     }
@@ -58,7 +58,7 @@ const ProjectFeaturedVideo = () => {
 
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center gap-16 mb-32 md:mb-64">
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
@@ -77,17 +77,17 @@ const ProjectFeaturedVideo = () => {
         </div>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.2 }}
         className="w-full lg:w-1/2 max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px] overflow-hidden border border-white/10 bg-[#0a0a0a] relative"
       >
-        <video 
+        <video
           ref={videoRef}
           src="/images/advertice.mp4"
-          loop 
+          loop
           playsInline
           className="w-full h-full object-cover"
         />
@@ -109,7 +109,7 @@ const Projects = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <ProjectFeaturedVideo />
-        
+
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-32 gap-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}

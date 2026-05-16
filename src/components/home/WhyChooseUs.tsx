@@ -33,22 +33,22 @@ const WhyChooseUs = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row justify-between items-end gap-16 mb-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
             className="w-full lg:w-2/3 relative"
           >
-             <span className="text-[60px] md:text-[150px] font-serif text-white/5 absolute -top-12 md:-top-32 -left-2 md:-left-16 pointer-events-none">
-                03
-              </span>
-             <span className="text-primary-red text-[10px] font-bold tracking-[0.5em] uppercase mb-6 block relative z-10">Our Distinction / 2026</span>
-             <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.9] relative z-10">
+            <span className="text-[60px] md:text-[150px] font-serif text-white/5 absolute -top-12 md:-top-32 -left-2 md:-left-16 pointer-events-none">
+              03
+            </span>
+            <span className="text-primary-red text-[10px] font-bold tracking-[0.5em] uppercase mb-6 block relative z-10">Our Distinction / 2026</span>
+            <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.9] relative z-10">
               Why <br /> <span className="text-white/10 italic font-serif lowercase block mt-2">Choose Us</span>
             </h2>
           </motion.div>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

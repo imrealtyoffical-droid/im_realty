@@ -1,10 +1,23 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUp } from "lucide-react";
+import { useTheme } from "next-themes";
 
 const Footer = () => {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const logoSrc = mounted && resolvedTheme === "light"
+    ? "/images/I Am Realty Logo (1).png"
+    : "/images/logo w.png";
+
   return (
     <footer className="bg-black py-16 px-6 md:px-24 border-t border-white/5 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -14,11 +27,11 @@ const Footer = () => {
           <div className="md:col-span-5 space-y-8">
             <Link href="/" className="inline-block">
               <Image 
-                src="/images/logo w.png" 
+                src={logoSrc} 
                 alt="I Am Realty Logo" 
                 width={180} 
                 height={60} 
-                className="h-12 w-auto object-contain brightness-125"
+                className="h-12 w-auto object-contain"
               />
             </Link>
             <p className="text-xs uppercase tracking-[0.3em] text-silver/50 leading-loose max-w-sm">

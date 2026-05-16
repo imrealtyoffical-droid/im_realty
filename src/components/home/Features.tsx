@@ -72,13 +72,13 @@ const Features = () => {
                 04
               </span>
               <h2 className="text-3xl md:text-8xl font-bold uppercase tracking-tighter leading-none mb-8 md:mb-12 relative z-10">
-                Advanced <br /> 
+                Advanced <br />
                 <span className="text-primary-red italic font-serif">Infrastructure</span>
               </h2>
             </motion.div>
           </div>
           <div className="lg:col-span-4 flex justify-start md:justify-end pt-0 md:pt-12">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -105,7 +105,7 @@ const Features = () => {
               <span className="absolute top-6 md:top-8 right-6 md:right-8 text-[10px] font-bold text-white/20 group-hover:text-primary-red/40 transition-colors tracking-[0.3em]">
                 {f.id}
               </span>
-              
+
               <div className="mb-8 md:mb-0">
                 <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center text-primary-red mb-8 md:mb-10 border border-primary-red/20 group-hover:bg-primary-red group-hover:text-white transition-all duration-500 shadow-xl shadow-primary-red/5">
                   {f.icon}
