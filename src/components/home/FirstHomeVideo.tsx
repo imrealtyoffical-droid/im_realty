@@ -36,7 +36,7 @@ export default function FirstHomeVideo() {
     playsInline
     className="w-full"
   >
-    <source src="/videos/web_video.mp4" type="video/mp4" />
+    <source src="/images/web_video.mp4" type="video/mp4" />
   </video>
 </div>
 
