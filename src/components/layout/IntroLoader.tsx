@@ -29,7 +29,7 @@ const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
         preload="auto"
         onCanPlayThrough={() => setIsVideoLoaded(true)}
         onEnded={onComplete}
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+        className={`absolute inset-0 w-full h-full object-contain md:object-cover bg-black transition-opacity duration-1000 ${
           isVideoLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
