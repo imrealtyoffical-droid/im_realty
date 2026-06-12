@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUp, Instagram, MessageCircle } from "lucide-react";
+import { ArrowUp, MessageCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const Footer = () => {
@@ -94,7 +94,7 @@ const Footer = () => {
     rel="noopener noreferrer"
     className="hover:text-primary-red hover:scale-110 transition-all duration-300"
   >
-    <Instagram size={20} />
+    <span className="text-sm font-bold">IG</span>
   </a>
 
   <a
