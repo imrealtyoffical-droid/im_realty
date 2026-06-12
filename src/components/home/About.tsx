@@ -100,7 +100,7 @@ const About = () => {
   initial={{ opacity: 0, scale: 0.95 }}
   whileInView={{ opacity: 1, scale: 1 }}
   viewport={{ once: true }}
-  className="lg:col-span-6 relative h-[500px] md:h-[650px]" overflow-hidden rounded-2xl bg-black flex items-center justify-center"
+  className="lg:col-span-6 relative h-[700px] md:h-[800px] overflow-hidden rounded-2xl bg-black flex items-center justify-center"
 >
   <Image
   src="/images/team_image.png"
