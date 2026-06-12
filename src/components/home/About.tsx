@@ -100,9 +100,9 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="lg:col-span-5 relative aspect-[4/5] overflow-hidden group"
+              className="lg:col-span-6 relative aspect-[4/5] overflow-hidden rounded-2xl"
             >
-              <Image src="/images/about.png" alt="Founders" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
+              <Image src="/images/team_image.png" alt="Founders" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               <div className="absolute bottom-10 left-10">
                 <p className="text-3xl font-serif mb-1">Kaustubh & Sachin</p>
@@ -113,14 +113,14 @@ const About = () => {
               </div>
             </motion.div>
 
-            <div className="lg:col-span-7">
+            <div className="lg:col-span-6">
               <motion.span
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 className="text-primary-red text-[10px] font-bold tracking-[0.6em] uppercase mb-12 block"
               >
-                The Vision / 01
+                About us / 01
               </motion.span>
               <motion.h3
                 initial={{ opacity: 0, y: 30 }}
