@@ -18,7 +18,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/Elevation.jpg"
+          src="public/images/team_image.png"
           alt="Luxury Real Estate"
           fill
           className="object-cover opacity-70"
