@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUp, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { ArrowUp, Instagram, MessageCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const Footer = () => {
@@ -103,7 +103,7 @@ const Footer = () => {
     rel="noopener noreferrer"
     className="hover:text-primary-red hover:scale-110 transition-all duration-300"
   >
-    <Facebook size={20} />
+    <span className="text-sm">FB</span>
   </a>
 
   <a
