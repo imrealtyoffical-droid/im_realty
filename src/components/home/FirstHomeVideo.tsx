@@ -28,17 +28,17 @@ export default function FirstHomeVideo() {
           </p>
         </motion.div>
 
-        <div className="overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full aspect-video object-cover"
-          >
-            <source src="/images/web_video.mp4" type="video/mp4" />
-          </video>
-        </div>
+        <div className="max-w-sm mx-auto overflow-hidden rounded-[32px] border border-white/10 shadow-[0_0_50px_rgba(255,255,255,0.05)] bg-black">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="w-full"
+  >
+    <source src="/videos/web_video.mp4" type="video/mp4" />
+  </video>
+</div>
 
       </div>
     </section>
