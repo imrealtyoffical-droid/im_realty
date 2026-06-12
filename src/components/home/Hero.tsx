@@ -10,15 +10,18 @@ const Hero = () => {
     <section className="relative h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/team_image.png"
-          alt="Luxury Real Estate"
-          fill
-          className="object-cover object-top opacity-90"
-          priority
-        />
-       <div className="absolute inset-0 bg-black/35" />
-<div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/10" />
+        <video
+  autoPlay
+  muted
+  loop
+  playsInline
+  preload="auto"
+  className="absolute inset-0 w-full h-full object-cover md:object-cover"
+>
+  <source src="/images/web_video.mp4" type="video/mp4" />
+</video>
+       <div className="absolute inset-0 bg-black/55" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
       </div>
 
       {/* Grid Lines Overlay */}
