@@ -1,28 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 
 const Hero = () => {
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-black text-white">
+    <section className="relative min-h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <video
-  autoPlay
-  muted
-  loop
-  playsInline
-  preload="auto"
-  className="absolute inset-0 w-full h-full object-cover md:object-cover"
->
-  <source src="/images/web_video.mp4" type="video/mp4" />
-</video>
-       <div className="absolute inset-0 bg-black/55" />
-<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
-      </div>
 
       {/* Grid Lines Overlay */}
       <div className="absolute inset-0 z-10 pointer-events-none">
@@ -32,52 +17,68 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 h-full flex items-center px-6 md:px-24">
-        <div className="max-w-5xl">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            {/* <span className="text-6xl md:text-[120px] font-serif text-white/5 absolute -top-12 md:-top-24 -left-2 md:-left-8">
-              01
-            </span> */}
-<h1 className="text-5xl md:text-8xl font-serif leading-none mb-6 tracking-tight">
-  I AM REALTY
-</h1>
+      <div className="relative z-20 min-h-screen flex items-center px-6 md:px-24 py-24">
+  <div className="w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 
-<p className="text-sm md:text-lg uppercase tracking-[0.3em] text-primary-red mb-4">
-  Industrial • Commercial • Residential
-</p>
+    {/* Left Side */}
+    <div>
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h1 className="text-5xl md:text-8xl font-serif leading-none mb-6 tracking-tight">
+          I AM REALTY
+        </h1>
 
-<p className="text-sm md:text-base text-white/80 mb-10 max-w-xl leading-relaxed">
-  Your trusted partner for premium industrial,
-  commercial and residential properties.
-</p>
-          </motion.div>
+        <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-primary-red mb-4">
+          Industrial • Commercial • Residential
+        </p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="flex items-center space-x-4 md:space-x-6"
-          >
-            <div className="flex flex-wrap gap-4">
-  <Link href="/contact">
-    <button className="px-8 py-4 bg-primary-red text-white text-[10px] uppercase tracking-[0.3em] hover:opacity-90 transition">
-      Contact Us
-    </button>
-  </Link>
+        <p className="text-sm md:text-base text-white/80 mb-10 max-w-xl leading-relaxed">
+          Your trusted partner for premium industrial,
+          commercial and residential properties.
+        </p>
+      </motion.div>
 
-  <Link href="/projects">
-    <button className="px-8 py-4 border border-white/30 text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition">
-      Start Buying
-    </button>
-  </Link>
-</div>
-          </motion.div>
-        </div>
+      <div className="flex flex-wrap gap-4">
+        <Link href="/contact">
+          <button className="px-8 py-4 bg-primary-red text-white text-[10px] uppercase tracking-[0.3em] hover:opacity-90 transition">
+            Contact Us
+          </button>
+        </Link>
+
+        <Link href="/projects">
+          <button className="px-8 py-4 border border-white/30 text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition">
+            Start Buying
+          </button>
+        </Link>
       </div>
+    </div>
+
+    {/* Right Side Video */}
+    <motion.div
+      initial={{ opacity: 0, x: 30 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+      className="flex justify-center"
+    >
+      <div className="w-full max-w-sm md:max-w-md lg:max-w-lg overflow-hidden rounded-[32px] border border-white/10 bg-black shadow-[0_0_50px_rgba(255,255,255,0.05)]">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full aspect-[9/16] object-cover"
+        >
+          <source src="/images/web_video.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </motion.div>
+
+  </div>
+</div>
     </section>
   );
 };
