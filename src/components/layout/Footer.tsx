@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Instagram, Facebook, MessageCircle } from "lucide-react";
 import { useTheme } from "next-themes";
 
 const Footer = () => {
@@ -69,7 +69,7 @@ const Footer = () => {
       </p>
 
       <p className="mt-2 text-sm text-white/80">
-        +91 XXXXX XXXXX
+        +91 75875 85555
       </p>
     </div>
 
@@ -85,34 +85,40 @@ const Footer = () => {
     </div>
 
     {/* Socials */}
-    <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-6 text-sm text-white/80 w-full px-4">
-      <a
-        href="https://www.instagram.com/imrealty.in/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="hover:text-primary-red transition"
-      >
-        Instagram
-      </a>
+   {/* Socials */}
+<div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-8 text-white/70">
 
-      <a
-        href="#"
-        className="hover:text-primary-red transition"
-      >
-        Facebook
-      </a>
+  <a
+    href="https://www.instagram.com/imrealty.in?igsh=MTExem5meWcxMThjNA=="
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-primary-red hover:scale-110 transition-all duration-300"
+  >
+    <Instagram size={20} />
+  </a>
 
-      <a
-        href="#"
-        className="hover:text-primary-red transition"
-      >
-        WhatsApp
-      </a>
-    </div>
+  <a
+    href="https://www.facebook.com/profile.php?id=61579703850383"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-primary-red hover:scale-110 transition-all duration-300"
+  >
+    <Facebook size={20} />
+  </a>
 
-  </div>
+  <a
+    href="https://wa.me/917587585555?text=Hi%20I%20would%20like%20to%20know%20more%20about%20your%20properties."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-primary-red hover:scale-110 transition-all duration-300"
+  >
+    <MessageCircle size={20} />
+  </a>
+
 </div>
-        </div>
+    </div> {/* End triangle container */}
+</div> {/* End md:col-span-7 */}
+</div> {/* End top grid */}
 
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/5 gap-8">
