@@ -97,18 +97,23 @@ const About = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="lg:col-span-6 relative aspect-[4/5] overflow-hidden rounded-2xl"
-            >
-              <Image src="/images/team_image.png" alt="Founders" fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+  initial={{ opacity: 0, scale: 0.95 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  className="lg:col-span-6 relative h-[700px] md:h-[800px] overflow-hidden rounded-2xl bg-black flex items-center justify-center"
+>
+  <Image
+    src="/images/team_image.png"
+    alt="I AM REALTY Team"
+    fill
+    className="object-contain p-4"
+  />
+
               <div className="absolute bottom-10 left-10">
-                <p className="text-3xl font-serif mb-1">Kaustubh & Sachin</p>
+                <p className="text-3xl font-serif mb-1">I AM REALTY Team</p>
                 <div className="flex items-center space-x-4">
                   <div className="w-8 h-[1px] bg-primary-red" />
-                  <p className="text-[10px] text-primary-red uppercase tracking-[0.3em] font-bold">Founders & Visionaries</p>
+                  <p className="text-[10px] text-primary-red uppercase tracking-[0.3em] font-bold">Trusted Real Estate Professionals</p>
                 </div>
               </div>
             </motion.div>
@@ -155,7 +160,7 @@ const About = () => {
                     <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-primary-red transition-colors">
                       <ArrowRight size={16} className="text-white group-hover:text-primary-red" />
                     </div>
-                    <span className="text-[10px] uppercase tracking-[0.5em] font-bold">Connect with Founders</span>
+                    <span className="text-[10px] uppercase tracking-[0.5em] font-bold">Connect Our Team</span>
                   </motion.button>
                 </Link>
               </motion.div>
