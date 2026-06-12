@@ -2,19 +2,13 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Plus, ArrowRight, Maximize2 } from "lucide-react";
+import { Plus, ArrowRight} from "lucide-react";
 import Link from "next/link";
 
 const About = () => {
-  const stats = [
-    { value: "Bespoke", label: "Architectural Vision", img: "/images/Elevation.jpg" },
-    { value: "Precision", label: "In Every Detail", img: "/images/Clubhouse.jpg" },
-    { value: "Visionary", label: "Future Foundations", img: "/images/SwimmigPool.jpg" },
-    { value: "Elite", label: "Quality Standards", img: "/images/WhatsApp Image 2026-01-08 at 2.29.20 PM.jpeg" },
-  ];
 
   return (
-    <section className="relative bg-[#0a0a0a] text-white py-24 md:py-40 px-6 md:px-24 overflow-hidden font-sans">
+    <section className="relative bg-[#0a0a0a] text-white py-20 md:py-28 px-6 md:px-24 overflow-hidden font-sans">
       {/* Cinematic Grid Layout - Following Hero */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="h-full w-[1px] bg-white/5 absolute right-8 md:right-32 top-0 hidden md:block" />
@@ -31,7 +25,7 @@ const About = () => {
         </div>
 
         {/* --- Top Section: Heading & Modular Cards --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 md:mb-48 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20 md:mb-28 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -42,11 +36,15 @@ const About = () => {
             <span className="text-[80px] md:text-[180px] font-serif text-white/5 absolute -top-16 md:-top-32 -left-4 md:-left-16 pointer-events-none">
               01
             </span>
-            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter uppercase leading-none mb-8 md:mb-12 relative z-10 underline decoration-primary-red/60 decoration-2 underline-offset-[14px]">
-              A New <br />
-              <span className="text-primary-red italic">Standard</span> <br />
-              In Luxury
-            </h2>
+            <h2 className="text-4xl md:text-7xl font-bold tracking-tighter uppercase leading-none mb-8 md:mb-12 relative z-10">
+  Trusted
+  <br />
+  <span className="text-primary-red italic">
+    Real Estate
+  </span>
+  <br />
+  Advisors
+</h2>
             {/* <div className="w-16 md:w-20 h-[1px] bg-primary-red mb-8 md:mb-12" /> */}
           </motion.div>
 
@@ -60,10 +58,10 @@ const About = () => {
                 className="bg-white/5 backdrop-blur-xl p-8 md:p-10 border border-white/10 relative group cursor-pointer hover:border-primary-red transition-all duration-500"
               >
                 <div className="flex justify-between items-start mb-6">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-silver/60 font-bold">Concept</p>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-silver/60 font-bold">Expertise</p>
                   <Plus size={18} className="text-primary-red group-hover:rotate-90 transition-transform duration-500" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold mb-3 uppercase tracking-tighter">Bespoke Living Spaces</h3>
+                <h3 className="text-lg md:text-xl font-bold mb-3 uppercase tracking-tighter">Industrial • Commercial • Residential</h3>
                 <p className="text-[10px] md:text-xs text-silver/40 leading-loose">We don't build houses; we curate experiences tailored to the unique rhythms of your life.</p>
               </motion.div>
             </Link>
@@ -77,67 +75,16 @@ const About = () => {
                 className="bg-white/5 backdrop-blur-xl p-8 md:p-10 border border-white/10 relative group cursor-pointer hover:border-primary-red transition-all duration-500"
               >
                 <div className="flex justify-between items-start mb-6">
-                  <p className="text-[10px] uppercase tracking-[0.3em] text-silver/60 font-bold">Commitment</p>
+                  <p className="text-[10px] uppercase tracking-[0.3em] text-silver/60 font-bold">Approach</p>
                   <Plus size={18} className="text-primary-red group-hover:rotate-90 transition-transform duration-500" />
                 </div>
-                <h3 className="text-lg md:text-xl font-bold mb-3 uppercase tracking-tighter">Uncompromising Quality</h3>
+                <h3 className="text-lg md:text-xl font-bold mb-3 uppercase tracking-tighter">Trust • Transparency • Results</h3>
                 <p className="text-[10px] md:text-xs text-silver/40 leading-loose">Every brick laid and every beam placed is a testament to our dedication to architectural perfection.</p>
               </motion.div>
             </Link>
           </div>
         </div>
 
-        {/* --- Middle Section: Stats with Thumbnails --- */}
-        <div className="mb-24 md:mb-48 relative">
-          <div className="absolute -right-16 top-0 hidden xl:flex flex-col items-center space-y-12">
-            <span className="text-[10px] uppercase tracking-[0.5em] [writing-mode:vertical-lr] text-white/20">
-              Vision / Core
-            </span>
-            <div className="w-[1px] h-32 bg-white/10" />
-          </div>
-
-          <motion.h3
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-2xl md:text-5xl font-light uppercase tracking-tighter mb-12 md:mb-20 flex items-center space-x-4 md:space-x-8"
-          >
-            <div className="w-8 md:w-16 h-[1px] bg-primary-red" />
-            <span>Redefining What's Possible</span>
-          </motion.h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <Link href="/projects" key={index}>
-                <motion.div
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className="relative h-64 md:h-72 overflow-hidden group cursor-pointer border border-white/5 hover:border-primary-red/50 transition-colors duration-500"
-                >
-                  <motion.div
-                    initial={{ filter: "grayscale(100%) brightness(50%)" }}
-                    whileInView={{ filter: "grayscale(0%) brightness(100%)" }}
-                    viewport={{ once: false, amount: 0.7 }}
-                    transition={{ duration: 0.8 }}
-                    className="h-full w-full"
-                  >
-                    <Image src={stat.img} alt={stat.label} fill className="object-cover transition-all duration-1000" />
-                  </motion.div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-                  <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 z-10">
-                    <h4 className="text-2xl md:text-3xl font-bold mb-1 tracking-tight group-hover:text-primary-red transition-colors uppercase">{stat.value}</h4>
-                    <p className="text-[8px] uppercase tracking-widest text-silver/60 font-bold">{stat.label}</p>
-                  </div>
-                  <div className="absolute top-6 md:top-8 right-6 md:right-8">
-                    <Maximize2 size={16} className="text-white/20 group-hover:text-primary-red transition-colors" />
-                  </div>
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
 
         {/* --- Owners Section: The Vision --- */}
         <div className="border-t border-white/10 pt-24 md:pt-40 pb-12 relative">
