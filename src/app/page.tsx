@@ -9,6 +9,7 @@ import About from "@/components/home/About";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Footer from "@/components/layout/Footer";
 import IntroLoader from "@/components/layout/IntroLoader";
+import FirstHomeVideo from "@/components/home/FirstHomeVideo";
 
 export default function Home() {
   const [showIntro, setShowIntro] = useState(true);
@@ -41,6 +42,7 @@ export default function Home() {
           <Navbar />
           <Hero />
           <About />
+          <FirstHomeVideo />
           <WhyChooseUs />
           <Footer />
         </>
