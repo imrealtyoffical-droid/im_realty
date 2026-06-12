@@ -14,11 +14,11 @@ const Hero = () => {
           src="/images/team_image.png"
           alt="Luxury Real Estate"
           fill
-          className="object-cover opacity-70"
+          className="object-cover object-top opacity-90"
           priority
         />
-       <div className="absolute inset-0 bg-black/55" />
-<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/20" />
+       <div className="absolute inset-0 bg-black/35" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-black/10" />
       </div>
 
       {/* Grid Lines Overlay */}
