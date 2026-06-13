@@ -20,7 +20,7 @@ const Hero = () => {
       </video>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 z-10" />
 
       {/* Grid Lines Overlay */}
       <div className="absolute inset-0 z-20 pointer-events-none">
@@ -37,7 +37,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="max-w-3xl"
         >
-          <h1 className="text-5xl md:text-8xl font-serif leading-none tracking-tight">
+          <h1 className="text-white text-5xl md:text-8xl font-serif leading-none tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
             I AM REALTY
           </h1>
 
@@ -45,7 +45,7 @@ const Hero = () => {
             Industrial • Commercial • Residential
           </p>
 
-          <p className="text-sm md:text-base text-white/80 mt-6 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-base text-white mt-6 max-w-2xl mx-auto leading-relaxed">
             Your trusted partner for premium industrial,
             commercial and residential properties.
           </p>
