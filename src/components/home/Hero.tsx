@@ -30,12 +30,12 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-30 min-h-screen flex items-center justify-center px-6">
+      <div className="relative z-30 min-h-screen flex items-center px-6 md:px-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-center max-w-4xl"
+          className="max-w-3xl"
         >
           <h1 className="text-5xl md:text-8xl font-serif leading-none tracking-tight">
             I AM REALTY
@@ -50,7 +50,7 @@ const Hero = () => {
             commercial and residential properties.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mt-10">
+          <div className="flex flex-wrap gap-4 mt-10">
             <Link href="/contact">
               <button className="px-8 py-4 bg-primary-red text-white text-[10px] uppercase tracking-[0.3em] hover:opacity-90 transition">
                 Contact Us
