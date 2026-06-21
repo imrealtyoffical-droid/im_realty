@@ -35,20 +35,28 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="max-w-3xl"
+          className="max-w-2xl"
         >
-          <h1 className="text-white text-5xl md:text-8xl font-serif leading-none tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
-            I AM REALTY
-          </h1>
+          <h1 className="text-white text-4xl md:text-8xl font-serif leading-none tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+  I M REALTY
+</h1>
 
           <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-primary-red mt-6">
             Industrial • Commercial • Residential
           </p>
 
-          <p className="text-sm md:text-base text-white mt-6 max-w-2xl mx-auto leading-relaxed">
-            Your trusted partner for premium industrial,
-            commercial and residential properties.
-          </p>
+          <p className="text-sm md:text-base text-white mt-6 max-w-3xl leading-relaxed">
+  At I M REALTY, people are at the heart of everything we do. We are
+  committed to creating an inclusive, respectful, and growth-driven
+  workplace where talent is nurtured, achievements are celebrated,
+  and opportunities are accessible to all.
+
+  <br /><br />
+
+  We believe in empowering individuals, fostering innovation, and
+  building a culture where everyone can thrive, contribute, and
+  grow together.
+</p>
 
           <div className="flex flex-wrap gap-4 mt-10">
             <Link href="/contact">
