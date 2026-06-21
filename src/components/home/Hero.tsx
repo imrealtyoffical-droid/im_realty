@@ -19,8 +19,9 @@ const Hero = () => {
         <source src="/images/web_video.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80 z-10" />
+      {/* Premium Overlay */}
+<div className="absolute inset-0 bg-black/20 z-10" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent z-10" />
 
       {/* Grid Lines Overlay */}
       <div className="absolute inset-0 z-20 pointer-events-none">
@@ -37,7 +38,7 @@ const Hero = () => {
           transition={{ duration: 1 }}
           className="max-w-2xl"
         >
-          <h1 className="text-white text-4xl md:text-8xl font-serif leading-none tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.8)]">
+          <h1 className="text-white text-5xl md:text-8xl font-serif leading-none tracking-tight drop-shadow-[0_8px_30px_rgba(0,0,0,1)]">
   I M REALTY
 </h1>
 
@@ -45,7 +46,7 @@ const Hero = () => {
             Industrial • Commercial • Residential
           </p>
 
-          <p className="text-sm md:text-base text-white mt-6 max-w-3xl leading-relaxed">
+          <p className="text-sm md:text-base text-white/95 mt-6 max-w-3xl leading-relaxed drop-shadow-lg">
   At I M REALTY, people are at the heart of everything we do. We are
   committed to creating an inclusive, respectful, and growth-driven
   workplace where talent is nurtured, achievements are celebrated,
@@ -60,13 +61,13 @@ const Hero = () => {
 
           <div className="flex flex-wrap gap-4 mt-10">
             <Link href="/contact">
-              <button className="px-8 py-4 bg-primary-red text-white text-[10px] uppercase tracking-[0.3em] hover:opacity-90 transition">
+              <button className=" px-8 py-4 bg-primary-red text-white text-[10px] uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(220,38,38,0.4)] hover:scale-105 transition-all duration-300 ">
                 Contact Us
               </button>
             </Link>
 
             <Link href="/projects">
-              <button className="px-8 py-4 border border-white/30 text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition">
+              <button className=" px-8 py-4 border border-white/60 bg-white/10 backdrop-blur-md text-white text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-300 ">
                 Start Buying
               </button>
             </Link>
