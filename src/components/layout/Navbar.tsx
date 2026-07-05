@@ -37,7 +37,7 @@ const Navbar = () => {
   const isHome = pathname === "/";
   const isDarkText = !isHome || isScrolled;
   const textColor = isDarkText ? "#000000" : "#ffffff";
-  const logoSrc = isDarkText ? "/images/I Am Realty Logo (1).png" : "/images/Logo w.png";
+  const logoSrc = isDarkText ? "/images/I Am Realty Logo (1).png" : "/images/logo w.png";
 
   return (
     <nav
