@@ -16,7 +16,6 @@
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -27,7 +26,6 @@
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -35,8 +33,8 @@
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
+  --background: #F8F7F4;
+  --foreground: #1A1A1A;
 }
 
 body {
@@ -58,21 +56,6 @@ h6 {
   text-transform: uppercase;
 }
 
-/* Custom Glassmorphism Utility */
-.glass {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.glass-dark {
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
 /* Hide scrollbar for Chrome, Safari and Opera */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
@@ -81,370 +64,358 @@ h6 {
 /* Custom Botanical Clip-Path */
 .clip-palm {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 20% 20%, 80% 20%, 80% 80%, 20% 80%);
-  /* A very basic star-ish shape to simulate leaf tips */
 }
 
 /* ============================================
-   LIGHT THEME OVERRIDES
-   These rules ONLY activate when html has class="light".
-   The dark theme (default) is completely untouched above.
+   LIGHT THEME OVERRIDES (GLOBAL)
    ============================================ */
 
-/* --- Global Transition for Smooth Theme Switch --- */
-html.light *,
-html.light *::before,
-html.light *::after {
+*,
+*::before,
+*::after {
   transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, fill 0.5s ease, stroke 0.5s ease;
 }
 
-/* --- Root Variables Override --- */
-html.light {
-  --background: #f5f0ea;
-  --foreground: #111111;
-}
-
-/* --- Body Background & Text --- */
-html.light body {
-  background-color: #f5f0ea;
-  color: #111111;
-}
-
 /* --- Background Color Overrides --- */
-html.light .bg-black {
-  background-color: #f5f0ea !important;
+.bg-black {
+  background-color: #F8F7F4 !important;
 }
 
-html.light .bg-off-black {
-  background-color: #f5f0ea !important;
+.bg-off-black {
+  background-color: #F8F7F4 !important;
 }
 
-html.light .bg-\[\#0a0a0a\] {
-  background-color: #f5f0ea !important;
+.bg-\[\#0a0a0a\] {
+  background-color: #F8F7F4 !important;
 }
 
-html.light .bg-\[\#0f0f0f\] {
-  background-color: #eae4dc !important;
+.bg-\[\#0f0f0f\] {
+  background-color: #F3F2EE !important;
 }
 
-html.light .bg-\[\#050505\] {
-  background-color: #efe9e2 !important;
+.bg-\[\#050505\] {
+  background-color: #FFFFFF !important;
 }
 
-/* --- Text Color Overrides (ENHANCED: much stronger contrast) --- */
-html.light .text-white {
-  color: #111111 !important;
+/* --- Text Color Overrides --- */
+.text-white {
+  color: #1A1A1A !important;
 }
 
-html.light .text-white\/90 {
-  color: rgba(17, 17, 17, 0.95) !important;
+.text-white\/90 {
+  color: #1A1A1A !important;
 }
 
-html.light .text-white\/80 {
-  color: rgba(17, 17, 17, 0.88) !important;
+.text-white\/80 {
+  color: #5F5F5F !important;
 }
 
-html.light .text-white\/70 {
-  color: rgba(17, 17, 17, 0.75) !important;
+.text-white\/70 {
+  color: #5F5F5F !important;
 }
 
-html.light .text-white\/50 {
-  color: rgba(17, 17, 17, 0.65) !important;
+.text-white\/50 {
+  color: #8B8B8B !important;
 }
 
-html.light .text-white\/40 {
-  color: rgba(17, 17, 17, 0.55) !important;
+.text-white\/40 {
+  color: #8B8B8B !important;
 }
 
-html.light .text-white\/20 {
-  color: rgba(17, 17, 17, 0.35) !important;
+.text-white\/20 {
+  color: #8B8B8B !important;
 }
 
-html.light .text-white\/10 {
-  color: rgba(17, 17, 17, 0.2) !important;
+.text-white\/10 {
+  color: rgba(139, 139, 139, 0.5) !important;
 }
 
-html.light .text-white\/5 {
-  color: rgba(17, 17, 17, 0.08) !important;
+.text-white\/5 {
+  color: rgba(139, 139, 139, 0.25) !important;
 }
 
-/* --- Silver/Muted Text (ENHANCED: much more readable) --- */
-html.light .text-silver {
-  color: #2d2d2d !important;
+/* --- Silver/Muted Text --- */
+.text-silver {
+  color: #5F5F5F !important;
 }
 
-html.light .text-silver\/80 {
-  color: rgba(45, 45, 45, 0.9) !important;
+.text-silver\/80 {
+  color: #5F5F5F !important;
 }
 
-html.light .text-silver\/60 {
-  color: rgba(45, 45, 45, 0.75) !important;
+.text-silver\/60 {
+  color: #8B8B8B !important;
 }
 
-html.light .text-silver\/50 {
-  color: rgba(45, 45, 45, 0.7) !important;
+.text-silver\/50 {
+  color: #8B8B8B !important;
 }
 
-html.light .text-silver\/40 {
-  color: rgba(45, 45, 45, 0.65) !important;
+.text-silver\/40 {
+  color: #8B8B8B !important;
 }
 
-/* --- Border Overrides (ENHANCED: much more visible) --- */
-html.light .border-white\/5 {
-  border-color: rgba(17, 17, 17, 0.12) !important;
+/* --- Border Overrides --- */
+.border-white\/5 {
+  border-color: #E6E3DD !important;
 }
 
-html.light .border-white\/10 {
-  border-color: rgba(17, 17, 17, 0.18) !important;
+.border-white\/10 {
+  border-color: #E6E3DD !important;
 }
 
-html.light .border-white\/20 {
-  border-color: rgba(17, 17, 17, 0.22) !important;
+.border-white\/20 {
+  border-color: #E6E3DD !important;
 }
 
-html.light .border-white\/30 {
-  border-color: rgba(17, 17, 17, 0.28) !important;
+.border-white\/30 {
+  border-color: #E6E3DD !important;
 }
 
-/* --- Background with White Opacity (ENHANCED: visible cards/panels) --- */
-html.light .bg-white\/3 {
-  background-color: rgba(17, 17, 17, 0.04) !important;
+/* --- Background with White Opacity (Cards) --- */
+.bg-white\/3 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid #E6E3DD !important;
 }
 
-html.light .bg-white\/5 {
-  background-color: rgba(17, 17, 17, 0.06) !important;
+.bg-white\/5 {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid #E6E3DD !important;
 }
 
-html.light .bg-white {
-  background-color: #1a1a1a !important;
+.bg-white {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid #E6E3DD !important;
 }
 
-html.light .bg-white.text-black {
-  color: #f5f0ea !important;
+.bg-white.text-black {
+  color: #F8F7F4 !important;
+  background-color: #1A1A1A !important;
 }
 
 /* --- Gradient Overrides --- */
-html.light .from-black {
-  --tw-gradient-from: #f5f0ea !important;
+.from-black {
+  --tw-gradient-from: #F8F7F4 !important;
 }
 
-html.light .via-transparent {
+.via-transparent {
   --tw-gradient-via: transparent !important;
 }
 
-html.light .to-black\/80 {
-  --tw-gradient-to: rgba(245, 240, 234, 0.85) !important;
+.to-black\/80 {
+  --tw-gradient-to: rgba(248, 247, 244, 0.9) !important;
 }
 
-html.light .to-black\/40 {
-  --tw-gradient-to: rgba(245, 240, 234, 0.5) !important;
+.to-black\/40 {
+  --tw-gradient-to: rgba(248, 247, 244, 0.6) !important;
 }
 
-html.light .from-black\/40 {
-  --tw-gradient-from: rgba(245, 240, 234, 0.5) !important;
+.from-black\/40 {
+  --tw-gradient-from: rgba(248, 247, 244, 0.6) !important;
 }
 
-html.light .to-black {
-  --tw-gradient-to: #f5f0ea !important;
+.to-black {
+  --tw-gradient-to: #F8F7F4 !important;
 }
 
-html.light .to-\[\#0a0a0a\] {
-  --tw-gradient-to: #f5f0ea !important;
+.to-\[\#0a0a0a\] {
+  --tw-gradient-to: #F8F7F4 !important;
 }
 
-html.light .from-\[\#0a0a0a\] {
-  --tw-gradient-from: #f5f0ea !important;
+.from-\[\#0a0a0a\] {
+  --tw-gradient-from: #F8F7F4 !important;
 }
 
-/* --- Decorative Grid Lines (ENHANCED: more visible) --- */
-html.light .bg-white.absolute {
-  background-color: rgba(17, 17, 17, 0.6) !important;
+/* --- Decorative Grid Lines & Subtleties --- */
+.bg-white.absolute {
+  background-color: rgba(230, 227, 221, 0.6) !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-html.light .bg-white\/10 {
-  background-color: rgba(17, 17, 17, 0.1) !important;
+.bg-white\/10 {
+  background-color: #E6E3DD !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
-html.light .bg-white\/5 {
-  background-color: rgba(17, 17, 17, 0.06) !important;
+.bg-white\/30 {
+  background-color: #E6E3DD !important;
 }
 
-html.light .bg-white\/30 {
-  background-color: rgba(17, 17, 17, 0.2) !important;
+.bg-white\/20 {
+  background-color: #E6E3DD !important;
 }
 
-html.light .bg-white\/20 {
-  background-color: rgba(17, 17, 17, 0.15) !important;
+/* --- Glassmorphism --- */
+.glass {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid #E6E3DD !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
 }
 
-/* --- Glassmorphism Light (ENHANCED: visible panels with shadow) --- */
-html.light .glass {
-  background: rgba(255, 255, 255, 0.55) !important;
-  border: 1px solid rgba(17, 17, 17, 0.12) !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
-}
-
-html.light .glass-dark {
-  background: rgba(255, 255, 255, 0.75) !important;
-  border: 1px solid rgba(17, 17, 17, 0.1) !important;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08) !important;
+.glass-dark {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid #E6E3DD !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06) !important;
 }
 
 /* --- Button & Interactive Overrides --- */
-html.light .bg-white.text-black {
-  background-color: #1a1a1a !important;
-  color: #f5f0ea !important;
+.hover\:bg-white:hover {
+  background-color: #1A1A1A !important;
 }
 
-html.light .hover\:bg-white:hover {
-  background-color: #1a1a1a !important;
+.hover\:text-black:hover {
+  color: #F8F7F4 !important;
 }
 
-html.light .hover\:text-black:hover {
-  color: #f5f0ea !important;
+.hover\:text-white:hover {
+  color: #F8F7F4 !important;
 }
 
-html.light .hover\:text-white:hover {
-  color: #f5f0ea !important;
-}
-
-html.light .hover\:bg-white\/5:hover {
-  background-color: rgba(17, 17, 17, 0.07) !important;
+.hover\:bg-white\/5:hover {
+  background-color: #F3F2EE !important;
 }
 
 /* --- Black/Dark Overlay Backgrounds --- */
-html.light .bg-black\/60 {
-  background-color: rgba(245, 240, 234, 0.75) !important;
+.bg-black\/60 {
+  background-color: rgba(248, 247, 244, 0.6) !important;
 }
 
-html.light .bg-black\/40 {
-  background-color: rgba(245, 240, 234, 0.5) !important;
+.bg-black\/40 {
+  background-color: rgba(248, 247, 244, 0.4) !important;
 }
 
 /* --- Zinc Backgrounds --- */
-html.light .bg-zinc-800 {
-  background-color: #e0dbd4 !important;
+.bg-zinc-800 {
+  background-color: #E6E3DD !important;
 }
 
 /* --- Scanlines (hide in light mode for clean look) --- */
-html.light .opacity-\[0\.03\],
-html.light .opacity-\[0\.02\] {
+.opacity-\[0\.03\],
+.opacity-\[0\.02\] {
   opacity: 0 !important;
 }
 
-/* --- Contact Form Inputs (ENHANCED: strong borders & text) --- */
-html.light input,
-html.light textarea,
-html.light select {
-  color: #111111 !important;
+/* --- Contact Form Inputs (Forms) --- */
+input,
+textarea,
+select {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E6E3DD !important;
+  color: #1A1A1A !important;
+  border-radius: 4px;
 }
 
-html.light input::placeholder,
-html.light textarea::placeholder {
-  color: rgba(17, 17, 17, 0.45) !important;
+input::placeholder,
+textarea::placeholder {
+  color: #8B8B8B !important;
 }
 
-html.light select option {
-  background-color: #f5f0ea !important;
-  color: #111111 !important;
+select option {
+  background-color: #FFFFFF !important;
+  color: #1A1A1A !important;
 }
 
-/* --- Scrollbar hide (keep consistent) --- */
-html.light .no-scrollbar::-webkit-scrollbar {
-  display: none;
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #e63946 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 1px #e63946 !important;
 }
-
-/* --- Logo: handled via component-level image swap, no CSS filter needed --- */
 
 /* --- Image Overlay Adjustments --- */
-html.light .brightness-\[0\.3\] {
-  filter: brightness(0.55) !important;
+.brightness-\[0\.3\] {
+  filter: brightness(0.9) !important;
 }
 
-html.light .brightness-50 {
-  filter: brightness(0.65) !important;
+.brightness-50 {
+  filter: brightness(0.95) !important;
 }
 
-/* --- Selection Color (keep red accent) --- */
-html.light ::selection {
+/* --- Selection Color --- */
+::selection {
   background-color: #e63946;
   color: #ffffff;
 }
 
 /* --- Mix Blend Difference Fix --- */
-html.light .mix-blend-difference {
+.mix-blend-difference {
   mix-blend-mode: normal !important;
 }
 
 /* --- ENHANCED: Stronger card hover backgrounds --- */
-html.light .group:hover .group-hover\:text-primary-red {
+.group:hover .group-hover\:text-primary-red {
   color: #e63946 !important;
 }
 
-/* --- ENHANCED: Hero section button borders more visible --- */
-html.light .border-white\/30 {
-  border-color: rgba(17, 17, 17, 0.3) !important;
-}
-
-/* --- ENHANCED: Separator lines in light mode --- */
-html.light .bg-gradient-to-b {
+/* --- Separator lines in light mode --- */
+.bg-gradient-to-b {
   opacity: 0.7;
 }
 
-/* --- ENHANCED: Primary red accent stays vibrant --- */
-html.light .text-primary-red {
-  color: #d42f3b !important;
+/* --- Primary red accent stays vibrant --- */
+.text-primary-red {
+  color: #e63946 !important;
 }
 
-html.light .border-primary-red {
-  border-color: #d42f3b !important;
+.border-primary-red {
+  border-color: #e63946 !important;
 }
 
-html.light .bg-primary-red {
-  background-color: #d42f3b !important;
+.bg-primary-red {
+  background-color: #e63946 !important;
 }
 
-html.light .border-primary-red\/50 {
-  border-color: rgba(212, 47, 59, 0.5) !important;
+.border-primary-red\/50 {
+  border-color: rgba(230, 57, 70, 0.5) !important;
 }
 
-html.light .border-primary-red\/30 {
-  border-color: rgba(212, 47, 59, 0.3) !important;
+.border-primary-red\/30 {
+  border-color: rgba(230, 57, 70, 0.3) !important;
 }
 
-html.light .border-primary-red\/20 {
-  border-color: rgba(212, 47, 59, 0.25) !important;
+.border-primary-red\/20 {
+  border-color: rgba(230, 57, 70, 0.2) !important;
 }
 
-/* --- ENHANCED: Grayscale images slightly brighter in light --- */
-html.light .grayscale {
-  filter: grayscale(100%) brightness(1.1) !important;
+/* --- Grayscale images --- */
+.grayscale {
+  filter: grayscale(100%) brightness(1.0) !important;
 }
 
-html.light .group:hover .group-hover\:grayscale-0 {
-  filter: grayscale(0%) brightness(1.05) !important;
+.group:hover .group-hover\:grayscale-0 {
+  filter: grayscale(0%) brightness(1.0) !important;
 }
 
-/* --- ENHANCED: Intro loader stays dark --- */
-html.light .fixed.inset-0.z-\[9999\] {
-  background-color: #0a0a0a !important;
+/* --- Intro loader --- */
+.fixed.inset-0.z-\[9999\] {
+  background-color: #F8F7F4 !important;
 }
 
-/* --- ENHANCED: Mobile menu overlay stays strong --- */
-html.light .fixed.inset-0.z-40 {
-  background-color: #f5f0ea !important;
+/* --- Mobile menu overlay --- */
+.fixed.inset-0.z-40 {
+  background-color: #F8F7F4 !important;
 }
 
-html.light .fixed.inset-0.z-40 .text-3xl {
-  color: #111111 !important;
+.fixed.inset-0.z-40 .text-3xl {
+  color: #1A1A1A !important;
 }
 
-/* --- ENHANCED: Feature card icon containers --- */
-html.light .shadow-xl.shadow-primary-red\/5 {
-  box-shadow: 0 8px 25px rgba(212, 47, 59, 0.08) !important;
+/* --- Feature card icon containers --- */
+.shadow-xl.shadow-primary-red\/5 {
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.08) !important;
 }
 
-/* --- ENHANCED: Footer subtle background difference --- */
-html.light .border-t.border-white\/5 {
-  border-top-color: rgba(17, 17, 17, 0.15) !important;
+/* --- Footer subtle background difference --- */
+.border-t.border-white\/5 {
+  border-top-color: #E6E3DD !important;
 }
-

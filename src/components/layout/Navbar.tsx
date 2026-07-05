@@ -4,16 +4,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
-import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -29,56 +28,65 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
+    { name: "About Us", href: "/about" },
     { name: "Projects", href: "/projects" },
     { name: "Amenities", href: "/features" },
     { name: "Contact", href: "/contact" },
   ];
 
-  const logoSrc = mounted && resolvedTheme === "light"
-    ? "/images/I Am Realty Logo (1).png"
-    : "/images/logo w.png";
+  const isHome = pathname === "/";
+  const isDarkText = !isHome || isScrolled;
+  const textColor = isDarkText ? "#000000" : "#ffffff";
+  const logoSrc = isDarkText ? "/images/I Am Realty Logo (1).png" : "/images/Logo w.png";
 
   return (
     <nav
       className={cn(
-        "fixed top-0 left-0 w-full z-50 transition-all duration-700 px-6 pt-8 pb-4 md:px-16 md:py-4",
-        isScrolled ? "glass-dark !py-2" : "bg-transparent"
+        "fixed top-0 left-0 w-full z-50 transition-all duration-700 px-6 pt-6 pb-4 md:px-16 md:py-4",
+        isScrolled ? "bg-white/20 backdrop-blur-md shadow-sm !py-4" : "bg-transparent "
       )}
     >
-      <div className="max-w-[1800px] mx-auto flex justify-between items-center">
+      <div className="max-w-[1800px] mx-auto flex items-center justify-between relative">
         <Link href="/" className="relative z-50">
           <Image
             src={logoSrc}
             alt="I Am Realty Logo"
             width={160}
             height={50}
-            className="h-8 md:h-12 w-auto object-contain"
+            className="h-8 md:h-12 w-auto object-contain transition-all duration-300"
           />
         </Link>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center space-x-16">
+        {/* Desktop Menu - Always Centered & Uppercase */}
+        <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 items-center space-x-12">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-[10px] uppercase tracking-[0.4em] text-white/70 hover:text-primary-red transition-colors duration-300 font-medium"
+              className="relative text-sm font-bold tracking-wider hover:text-primary-red transition-all duration-300 uppercase group"
+              style={{ color: textColor }}
             >
               {link.name}
+              {/* Active Indicator Line (Hover Effect) */}
+              <span
+                className="absolute -bottom-2 left-1/2 w-0 h-0.5 transition-all duration-300 group-hover:w-full group-hover:left-0"
+                style={{ backgroundColor: textColor }}
+              ></span>
             </Link>
           ))}
-          <ThemeToggle />
-          <button className="text-white hover:text-primary-red transition-colors duration-300">
-            <Menu size={24} />
+        </div>
+
+        {/* Right Side - Hamburger Menu */}
+        <div className="hidden lg:flex items-center relative z-50">
+          <button style={{ color: textColor }} className="hover:text-primary-red transition-colors duration-300">
+            <Menu size={28} />
           </button>
         </div>
 
         {/* Mobile Toggle */}
         <div className="lg:hidden flex items-center gap-3 relative z-50">
-          <ThemeToggle />
           <button
-            className="text-white"
+            style={{ color: textColor }}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

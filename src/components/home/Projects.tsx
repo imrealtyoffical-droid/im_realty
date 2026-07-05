@@ -4,45 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Plus } from "lucide-react";
-
-const projectModules = [
-  {
-    id: "01",
-    title: "The Elevation",
-    desc: "A vertical masterpiece redefining the skyline of Dombivli. Sunraj Solitaire stands as a testament to modern architectural ambition.",
-    image: "/images/Elevation.jpg",
-    tags: ["Iconic Design", "Premium Facade", "Structural Brilliance"]
-  },
-  {
-    id: "02",
-    title: "The Wellness Club",
-    desc: "A sanctuary for the body and mind. Our state-of-the-art clubhouse offers world-class fitness and social experiences.",
-    image: "/images/Clubhouse.jpg",
-    tags: ["Designer Gym", "Social Hub", "Premium Spa"]
-  },
-  {
-    id: "03",
-    title: "Aqua Horizon",
-    desc: "Experience tranquility at our infinity pool, where water meets the sky in a seamless blend of luxury and relaxation.",
-    image: "/images/SwimmigPool.jpg",
-    tags: ["Infinity Pool", "Sunken Deck", "Ambient Lighting"]
-  },
-  {
-    id: "04",
-    title: "Architectural Detail",
-    desc: "Every corner of Solitaire is meticulously crafted to ensure a life of unparalleled elegance and comfort.",
-    image: "/images/WhatsApp Image 2026-01-08 at 2.21.07 PM.jpeg",
-    tags: ["Grand Lobby", "Bespoke Interiors", "Elite Finish"]
-  },
-  {
-    id: "05",
-    title: "The Promenade",
-    desc: "Lush green spaces and open walkways designed to bring you closer to nature while living in the heart of the city.",
-    image: "/images/WhatsApp Image 2026-01-08 at 2.29.20 PM.jpeg",
-    tags: ["Landscape Design", "Open Spaces", "Evening Trails"]
-  }
-];
+import { Plus } from "lucide-react";
 
 const ProjectFeaturedVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -57,154 +19,256 @@ const ProjectFeaturedVideo = () => {
   }, [isInView]);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center gap-16 mb-32 md:mb-64">
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-16 mb-32 md:mb-48 relative">
+
+      {/* Decorative background depth indicator */}
+      <div className="absolute top-0 left-0 text-[12rem] md:text-[18rem] font-serif font-bold text-black/[0.02] select-none pointer-events-none z-0">
+        01
+      </div>
+
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="w-full lg:w-1/2 relative"
+        className="w-full lg:w-1/2 relative z-10 space-y-8"
       >
-        <span className="text-primary-red text-[10px] font-bold tracking-[0.5em] uppercase mb-6 block">Vision in Motion / 2026</span>
-        <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter leading-[0.9]">
-          The <br /> <span className="text-white/10 italic font-serif lowercase block mt-2">Blueprint</span>
+        <div className="inline-flex items-center gap-3 px-3 py-1 bg-[#0b3d2c]/5 border border-[#0b3d2c]/10 rounded-full">
+          <span className="w-1.5 h-1.5 bg-[#c82222] rounded-full animate-pulse" />
+          <span className="text-[#0b3d2c] text-[9px] font-bold tracking-[0.3em] uppercase">Vision in Motion / 2026</span>
+        </div>
+
+        <h2 className="text-4xl md:text-8xl font-serif text-[#1c1c1c] uppercase tracking-tighter leading-[0.9] pt-2">
+          The <br />
+          <span className="text-[#c82222] italic font-serif lowercase block mt-2 relative">
+            blueprint
+          </span>
         </h2>
-        <div className="mt-12 max-w-sm">
-          <div className="w-16 h-[1px] bg-primary-red mb-8" />
-          <p className="text-[10px] uppercase tracking-[0.3em] text-silver/40 leading-loose">
-            Witness the transformation of strategy into structural reality. Every frame captures our dedication to high-performance real estate.
+
+        <div className="max-w-md pt-4 space-y-4">
+          <p className="text-xs uppercase tracking-widest text-gray-500 leading-relaxed font-medium">
+            Witness the transformation of strategy into structural reality. Every frame captures our dedication to high-performance real estate operations, buyer consulting, and exclusive developer mandates.
+          </p>
+          <p className="text-xs uppercase tracking-widest text-gray-500 leading-relaxed font-medium">
+            At I M REALTY, we represent select developer portfolios across Dombivli, Thane, and Bhiwandi. Our legacy is built on absolute transparency, structured sales mandates, and an unwavering commitment to bringing premium residential and logistics assets to market.
           </p>
         </div>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.2 }}
-        className="w-full lg:w-1/2 max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px] overflow-hidden border border-white/10 bg-[#0a0a0a] relative"
-      >
-        <video
-          ref={videoRef}
-          src="/images/advertice.mp4"
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-      </motion.div>
+      {/* Right Video Container with Offset Decorative Outline Grid */}
+      <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+
+        {/* Offset Outline Border behind the video card for premium depth */}
+        <div className="absolute top-4 right-4 w-full max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px] border border-[#0b3d2c]/20 rounded-lg pointer-events-none z-0 hidden sm:block" />
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.2 }}
+          className="w-full max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px] overflow-hidden border border-black/10 bg-[#f1efe7] relative shadow-2xl rounded-lg z-10"
+        >
+          <video
+            ref={videoRef}
+            src="/images/advertice.mp4"
+            loop
+            playsInline
+            controls
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70 pointer-events-none" />
+
+          {/* Interactive Play/Live overlay indicator */}
+          <div className="absolute top-6 left-6 z-20 flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-3.5 py-2 rounded border border-white/10">
+            <span className="w-2 h-2 bg-[#c82222] rounded-full animate-ping" />
+            <span className="w-2 h-2 bg-[#c82222] rounded-full absolute" />
+            <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white">LIVE STREAM</span>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
 
 const Projects = () => {
   return (
-    <section className="bg-black py-24 md:py-40 px-6 md:px-24 overflow-hidden relative">
-      {/* Background Decorative Lines */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-5">
-        <div className="h-full w-[1px] bg-white absolute left-4 md:left-32 hidden md:block" />
-        <div className="h-full w-[1px] bg-white absolute right-4 md:right-32 hidden md:block" />
-        <div className="w-full h-[1px] bg-white absolute top-1/2" />
-      </div>
+    <section className="bg-[#f9f8f3] text-[#1c1c1c] py-16 md:py-24 px-6 md:px-24 overflow-hidden relative">
 
       <div className="max-w-7xl mx-auto relative z-10">
         <ProjectFeaturedVideo />
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 md:mb-32 gap-12">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <span className="text-primary-red text-[10px] font-bold tracking-[0.5em] uppercase mb-6 block">Flagship Development / 2026</span>
-            <h2 className="text-4xl md:text-8xl font-bold uppercase tracking-tighter leading-none">
-              Elevation<br /> <span className="text-white/10 italic font-serif lowercase"></span>
-            </h2>
-            <div className="flex items-center space-x-4 mt-8">
-              <div className="w-12 h-[1px] bg-primary-red" />
-              <p className="text-[10px] uppercase tracking-[0.4em] text-silver/60">Dombivli, Thane</p>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="max-w-md text-silver/40 text-[9px] md:text-[10px] uppercase tracking-widest leading-loose text-left md:text-right"
-          >
-            <p>Our commitment to excellence is embodied in Sunraj Solitaire. A singular vision of luxury that combines next-generation engineering with timeless aesthetic appeal.</p>
-            <Link href="/contact">
-              <button className="mt-8 px-8 md:px-10 py-3 md:py-4 bg-white text-black text-[10px] font-bold uppercase tracking-[0.2em] md:tracking-[0.4em] hover:bg-primary-red hover:text-white transition-all duration-500">
-                Download Brochure
-              </button>
-            </Link>
-          </motion.div>
+        {/* SECTION HEADER */}
+        <div className="mb-24">
+          <span className="text-[#0b3d2c] text-[10px] font-bold tracking-[0.5em] uppercase mb-4 block">Residential Showcase</span>
+          <h2 className="text-3xl md:text-6xl font-serif text-[#1c1c1c] uppercase tracking-widest leading-none">
+            Our Portfolios
+          </h2>
+          <div className="w-20 h-[1px] bg-[#0b3d2c] mt-6" />
         </div>
 
-        <div className="space-y-24 md:space-y-64">
-          {projectModules.map((module, index) => (
-            <motion.div
-              key={module.id}
-              initial={{ opacity: 0, y: 100 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className={`group flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-20 items-center`}
-            >
-              {/* Module Image */}
-              <div className="w-full lg:w-7/12 relative h-[400px] md:h-[700px] overflow-hidden group">
-                <motion.div
-                  initial={{ filter: "grayscale(100%) brightness(60%)" }}
-                  whileInView={{ filter: "grayscale(0%) brightness(100%)" }}
-                  viewport={{ once: false, amount: 0.6 }}
-                  transition={{ duration: 1 }}
-                  className="h-full w-full"
-                >
-                  <Image
-                    src={module.image}
-                    alt={module.title}
-                    fill
-                    className="object-cover transition-all duration-1000 md:grayscale md:group-hover:grayscale-0 md:brightness-[0.6] md:group-hover:brightness-100"
-                  />
-                </motion.div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
-                <div className="absolute top-10 right-10 z-20">
-                  <span className="text-white/20 text-6xl font-serif italic group-hover:text-primary-red transition-colors duration-1000">{module.id}</span>
+        {/* SHOWCASE STRUCTURES */}
+        <div className="space-y-40 md:space-y-64">
+
+          {/* PROJECT 1: THE ELEVATION (Structure Style 1: Split banner text on left card, large image on right) */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="flex flex-col lg:flex-row gap-8 items-stretch shadow-md overflow-hidden bg-white rounded-lg border border-black/5"
+          >
+            {/* Left Info Panel */}
+            <div className="w-full lg:w-[35%] bg-[#fcfbf9] p-8 md:p-12 flex flex-col justify-between">
+              <div>
+                <span className="text-[#c82222] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">PROJECT / 01</span>
+                <h3 className="text-3xl md:text-4xl font-serif text-[#1c1c1c] mb-6 leading-tight">
+                  The Elevation
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed mb-8">
+                  A vertical masterpiece redefining the skyline of Dombivli. Sunraj Solitaire stands as a testament to modern architectural ambition, combining premium design with structural strength.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="text-[9px] uppercase tracking-widest text-[#0b3d2c] bg-[#0b3d2c]/5 border border-[#0b3d2c]/20 px-3 py-1.5 rounded">Iconic Design</span>
+                  <span className="text-[9px] uppercase tracking-widest text-[#0b3d2c] bg-[#0b3d2c]/5 border border-[#0b3d2c]/20 px-3 py-1.5 rounded">Premium Facade</span>
                 </div>
               </div>
+              <div className="pt-8">
+                <Link href="/contact" className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#0b3d2c] hover:text-[#c82222] transition-colors">
+                  Inquire Now <span className="text-sm">→</span>
+                </Link>
+              </div>
+            </div>
 
-              {/* Module Info */}
-              <div className="w-full lg:w-5/12 space-y-10">
-                <motion.span
-                  className="text-primary-red text-[10px] font-bold tracking-[0.6em] uppercase"
-                >
-                  Phase / 0{index + 1}
-                </motion.span>
-                <h3 className="text-4xl md:text-6xl font-serif italic tracking-tighter leading-tight group-hover:text-primary-red transition-colors duration-500">
-                  {module.title}
+            {/* Right Wide Image */}
+            <div className="w-full lg:w-[65%] min-h-[300px] md:min-h-[450px] relative">
+              <Image
+                src="/images/Elevation.jpg"
+                alt="The Elevation"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </motion.div>
+
+
+          {/* PROJECT 2: WELLNESS CLUB (Structure Style 3: 3-column split panel layout) */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="flex flex-col lg:flex-row gap-6 items-stretch"
+          >
+            {/* Column 1: Vertical Portrait Image */}
+            <div className="w-full lg:w-[30%] min-h-[350px] relative rounded-lg overflow-hidden shadow-md">
+              <Image
+                src="/images/Clubhouse.jpg"
+                alt="Clubhouse Portrait"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Column 2: Vertical Text Block (Light cream background) */}
+            <div className="w-full lg:w-[25%] bg-[#f1efe7] rounded-lg flex items-center justify-center py-16 px-8 relative overflow-hidden min-h-[200px]">
+              <span className="absolute text-black/5 text-8xl font-serif rotate-90 font-bold select-none pointer-events-none">CLUB</span>
+              <h4 className="text-3xl md:text-5xl font-serif text-[#0b3d2c] uppercase tracking-[0.3em] writing-mode-vertical text-center select-none font-bold">
+                WELLNESS
+              </h4>
+            </div>
+
+            {/* Column 3: Main Info details Card */}
+            <div className="w-full lg:w-[45%] bg-white rounded-lg p-8 md:p-12 flex flex-col justify-between border border-black/5 shadow-md">
+              <div>
+                <span className="text-[#c82222] text-[10px] font-bold tracking-[0.4em] uppercase block mb-6">PROJECT / 02</span>
+                <h3 className="text-3xl md:text-4xl font-serif text-[#1c1c1c] mb-6">
+                  The Wellness Club
                 </h3>
-                <p className="text-silver/40 text-sm leading-loose max-w-sm">
-                  {module.desc}
+                <p className="text-sm text-gray-600 leading-relaxed mb-8">
+                  A sanctuary designed for both body and mind. The luxury clubhouse at Sunraj Solitaire provides state-of-the-art health, social, and fitness spaces curated specifically for the wellness of homeowners.
                 </p>
-                <div className="flex flex-wrap gap-4 pt-4">
-                  {module.tags.map((tag) => (
-                    <span key={tag} className="text-[8px] uppercase tracking-widest text-white/40 border border-white/10 px-4 py-2 hover:border-primary-red hover:text-white transition-colors cursor-default">
-                      {tag}
-                    </span>
-                  ))}
+                <div className="grid grid-cols-2 gap-4 border-t border-black/5 pt-6">
+                  <div>
+                    <h5 className="text-[10px] uppercase font-bold text-gray-500 mb-1">Developer Details</h5>
+                    <p className="text-xs text-gray-800 font-semibold">Sunraj Group</p>
+                  </div>
+                  <div>
+                    <h5 className="text-[10px] uppercase font-bold text-gray-500 mb-1">Design Consultant</h5>
+                    <p className="text-xs text-gray-800 font-semibold">Urban Space Co.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="pt-8">
+                <Link href="/contact" className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#0b3d2c] hover:text-[#c82222] transition-colors">
+                  Inquire Now <span className="text-sm">→</span>
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+
+
+          {/* PROJECT 3: AQUA HORIZON (Structure Style 4: Left Vertical dark-green bar, Right Split Layout) */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="flex flex-col lg:flex-row gap-6 items-stretch"
+          >
+            {/* Left Vertical Red Sidebar */}
+            <div className="w-full lg:w-[15%] bg-[#f34347] text-white flex flex-col justify-between items-center p-6 md:p-8 rounded-lg min-h-[180px] lg:min-h-auto text-center shadow-md">
+              <span className="text-[10px] font-bold tracking-[0.3em] uppercase opacity-60">PHASE 03</span>
+              <div className="flex items-center justify-center flex-1 my-6 lg:my-12">
+                <h4 className="text-2xl font-serif uppercase tracking-[0.2em] [writing-mode:vertical-lr] lg:rotate-180">
+                  AQUA HORIZON
+                </h4>
+              </div>
+              <span className="text-xs opacity-40 hidden lg:block">© 2026</span>
+            </div>
+
+            {/* Right Main Split Content */}
+            <div className="w-full lg:w-[85%] flex flex-col md:flex-row gap-6">
+
+              {/* Content Card */}
+              <div className="w-full md:w-1/2 bg-white rounded-lg p-8 md:p-12 border border-black/5 shadow-md flex flex-col justify-between">
+                <div>
+                  <h3 className="text-3xl font-serif text-[#1c1c1c] mb-6">
+                    Infinity Horizon Pool
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed mb-6">
+                    Water meets the sky at our signature infinity pool. A masterfully engineered recreation zone featuring sunken decks, ambient underwater LED arrays, and clear filtration systems.
+                  </p>
+                  <ul className="space-y-2 border-t border-black/5 pt-6 text-xs text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-[#c82222] rounded-full"></span>
+                      Infinity-Edge Glass Framing
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 bg-[#c82222] rounded-full"></span>
+                      Ambient Sunken Fire Decks
+                    </li>
+                  </ul>
                 </div>
                 <div className="pt-8">
-                  <Link href="/projects" className="flex items-center space-x-6 group/btn">
-                    <div className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover/btn:border-primary-red transition-colors">
-                      <Plus size={16} className="text-white group-hover/btn:text-primary-red transition-colors" />
-                    </div>
-                    <span className="text-[10px] uppercase tracking-[0.5em] font-bold text-white/50 group-hover/btn:text-white transition-colors">Learn More</span>
+                  <Link href="/contact" className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-[#0b3d2c] hover:text-[#c82222] transition-colors">
+                    Inquire Now <span className="text-sm">→</span>
                   </Link>
                 </div>
               </div>
-            </motion.div>
-          ))}
+
+              {/* Pool Showcase Image */}
+              <div className="w-full md:w-1/2 min-h-[300px] relative rounded-lg overflow-hidden shadow-md">
+                <Image
+                  src="/images/SwimmigPool.jpg"
+                  alt="Aqua Horizon Pool"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

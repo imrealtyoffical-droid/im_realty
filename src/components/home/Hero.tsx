@@ -1,11 +1,57 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { Play } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const [showIntro, setShowIntro] = useState(false);
+
+  useEffect(() => {
+    // Check if the intro has already played in this session
+    const introPlayed = sessionStorage.getItem("introPlayed");
+    if (!introPlayed) {
+      setShowIntro(true);
+      // Set the flag immediately so even if they refresh while it's playing, it won't play again
+      sessionStorage.setItem("introPlayed", "true");
+    }
+  }, []);
+
+  const handleIntroEnd = () => {
+    setShowIntro(false);
+  };
+
   return (
-    <section className="relative min-h-screen w-full overflow-hidden text-white">
+    <section className="relative min-h-screen w-full overflow-hidden text-white flex flex-col justify-center">
+
+      {/* Intro Splash Video (Plays only once) */}
+      <AnimatePresence>
+        {showIntro && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="fixed inset-0 z-[100] bg-black"
+          >
+            <video
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleIntroEnd}
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/images/0428 (online-video-cutter.com).mp4" type="video/mp4" />
+            </video>
+            <button
+              onClick={handleIntroEnd}
+              className="absolute bottom-8 right-8 z-[101] text-white/50 hover:text-white transition-colors text-sm font-medium tracking-widest uppercase"
+            >
+              Skip Intro
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Background Video */}
       <video
@@ -16,64 +62,70 @@ const Hero = () => {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/images/web_video.mp4" type="video/mp4" />
+        <source src="/images/Herosection (1).mp4" type="video/mp4" />
       </video>
 
-      {/* Premium Overlay */}
-<div className="absolute inset-0 bg-black/20 z-10" />
-<div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/20 to-transparent z-10" />
+      {/* Premium Overlay - Left gradient for readability */}
+      <div className="absolute inset-0 z-10" style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }} />
+      <div className="absolute inset-0 z-10" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)' }} />
 
-      {/* Grid Lines Overlay */}
-      <div className="absolute inset-0 z-20 pointer-events-none">
-        <div className="h-full w-[1px] bg-white/10 absolute right-4 md:right-32 top-0 hidden md:block" />
-        <div className="w-full h-[1px] bg-white/10 absolute top-20 md:top-24 left-0" />
-        <div className="h-full w-[1px] bg-white/5 absolute left-4 md:left-24 top-0 hidden md:block" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-30 min-h-screen flex items-center px-6 md:px-24">
+      {/* Main Left-Aligned Content */}
+      <div className="relative z-30 w-full px-6 md:px-16 xl:px-24">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="max-w-2xl"
+          className="max-w-4xl flex flex-col items-start pt-20"
         >
-          <h1 className="text-white text-5xl md:text-8xl font-serif leading-none tracking-tight drop-shadow-[0_8px_30px_rgba(0,0,0,1)]">
-  I M REALTY
-</h1>
+          {/* Top Subheading */}
+          <h2
+            className="text-xl md:text-3xl font-bold tracking-[0.2em] uppercase mb-1 drop-shadow-md"
+            style={{ color: '#ff3447' }}
+          >
+            WELCOME TO
+          </h2>
 
-          <p className="text-sm md:text-lg uppercase tracking-[0.3em] text-primary-red mt-6">
-            Industrial • Commercial • Residential
-          </p>
+          {/* Main Huge Title */}
+          <h1
+            className="text-[4rem] sm:text-[5.5rem] md:text-[7rem] lg:text-[9rem] font-sans font-black leading-none tracking-tight uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+            style={{ color: 'rgba(255, 255, 255, 0.6)' }}
+          >
+            I M REALTY
+          </h1>
 
-          <p className="text-sm md:text-base text-white/95 mt-6 max-w-3xl leading-relaxed drop-shadow-lg">
-  At I M REALTY, people are at the heart of everything we do. We are
-  committed to creating an inclusive, respectful, and growth-driven
-  workplace where talent is nurtured, achievements are celebrated,
-  and opportunities are accessible to all.
+          {/* Paragraph with left border */}
+          <div className="mt-10 pl-6 border-l-2 border-white/60">
+            <p
+              className="text-sm md:text-base leading-relaxed font-medium max-w-2xl drop-shadow-md"
+              style={{ color: 'rgba(255, 255, 255, 0.9)' }}
+            >
+              At I M REALTY, people are at the heart of everything we do. We are committed to creating an inclusive, respectful, and growth-driven workplace. Experience excellence across Industrial, Commercial, and Residential real estate.
+            </p>
+          </div>
 
-  <br /><br />
-
-  We believe in empowering individuals, fostering innovation, and
-  building a culture where everyone can thrive, contribute, and
-  grow together.
-</p>
-
-          <div className="flex flex-wrap gap-4 mt-10">
-            <Link href="/contact">
-              <button className=" px-8 py-4 bg-primary-red text-white text-[10px] uppercase tracking-[0.3em] shadow-[0_10px_30px_rgba(220,38,38,0.4)] hover:scale-105 transition-all duration-300 ">
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-12 w-full sm:w-auto">
+            <Link href="/contact" className="w-full sm:w-auto">
+              <button
+                className="w-full px-8 md:px-12 py-4 text-white text-sm font-bold tracking-wider transition-all duration-300 shadow-lg hover:-translate-y-1 hover:brightness-110 corner rounded-full"
+                style={{ backgroundColor: '#ff3447' }}
+              >
                 Contact Us
               </button>
             </Link>
 
-            <Link href="/projects">
-              <button className=" px-8 py-4 border border-white/60 bg-white/10 backdrop-blur-md text-white text-[10px] uppercase tracking-[0.3em] hover:bg-white hover:text-black transition-all duration-300 ">
+            <Link href="/projects" className="w-full sm:w-auto">
+              <button
+                className="w-full px-8 md:px-12 py-4 border border-white text-sm font-bold tracking-wider hover:bg-white/10 transition-all duration-300 shadow-lg hover:-translate-y-1 corner rounded-full"
+                style={{ color: '#ffffff' }}
+              >
                 Start Buying
               </button>
             </Link>
           </div>
         </motion.div>
       </div>
+
     </section>
   );
 };

@@ -14,7 +14,7 @@ export async function sendEmail(formData: {
   try {
     const { data, error } = await resend.emails.send({
       from: "IM Realty Inquiry <onboarding@resend.dev>", // Replace with your verified domain in production
-      to: ["imrealtyoffical@gmail.com"], // The user specified this email in the code comments
+      to: ["imrealtyoffical@gmail.com"], // Test email address
       subject: `New Inquiry: ${project} - ${name}`,
       text: `
         Name: ${name}

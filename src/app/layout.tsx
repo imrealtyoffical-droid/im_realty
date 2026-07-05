@@ -20,8 +20,6 @@ export const metadata: Metadata = {
   description: "Redefining architectural excellence with a fresh perspective. IM Realty curates bespoke living experiences and visionary spaces for the modern world.",
 };
 
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,9 +30,7 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${inter.variable} font-sans antialiased bg-off-black text-white`}
       >
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
