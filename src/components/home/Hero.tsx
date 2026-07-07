@@ -87,7 +87,7 @@ const Hero = () => {
 
           {/* Main Huge Title */}
           <h1
-            className="text-[4rem] sm:text-[5.5rem] md:text-[7rem] lg:text-[9rem] font-sans font-black leading-none tracking-tight uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
+            className="text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[7.5rem] xl:text-[9rem] font-sans font-black leading-none tracking-tight uppercase drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
             style={{ color: 'rgba(255, 255, 255, 0.6)' }}
           >
             I M REALTY

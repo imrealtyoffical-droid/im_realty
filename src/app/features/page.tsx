@@ -513,10 +513,10 @@ export default function AmenitiesPage() {
             <div className="relative w-full max-w-[340px] aspect-[3/4]">
               {/* Offset Outline Border */}
               <div className="absolute -top-4 -left-4 w-full h-full border border-[#111111]/10 rounded-2xl pointer-events-none z-0 hidden sm:block" />
-              
+
               <div className="w-full h-full overflow-hidden rounded-2xl border border-[#111111]/10 shadow-lg relative z-10">
                 <Image
-                  src="/images/3.jpeg"
+                  src="/images/1.jpeg"
                   alt="Happy Residents"
                   fill
                   className="object-cover"

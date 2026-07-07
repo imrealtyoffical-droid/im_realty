@@ -102,22 +102,22 @@ const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center space-y-10 lg:hidden"
+            className="fixed inset-0 z-40 bg-[#FAF9F6] flex flex-col items-center justify-center space-y-10 lg:hidden"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-3xl font-serif uppercase tracking-[0.4em] hover:text-primary-red transition-colors"
+                className="text-3xl font-serif uppercase tracking-[0.4em] text-[#111111] hover:text-primary-red transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
             <div className="flex space-x-8 pt-10">
-              <a href="https://www.instagram.com/imrealty.in/" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-silver hover:text-primary-red transition-colors">IG</a>
-              <span className="text-[10px] uppercase tracking-widest text-silver">FB</span>
-              <span className="text-[10px] uppercase tracking-widest text-silver">TW</span>
+              <a href="https://www.instagram.com/imrealty.in/" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-widest text-[#666666] hover:text-primary-red transition-colors">IG</a>
+              <span className="text-[10px] uppercase tracking-widest text-[#666666]">FB</span>
+              <span className="text-[10px] uppercase tracking-widest text-[#666666]">TW</span>
             </div>
           </motion.div>
         )}
