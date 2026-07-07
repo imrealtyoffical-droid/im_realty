@@ -509,15 +509,19 @@ export default function AmenitiesPage() {
           </div>
 
           {/* Customer Booking celebration image used as portrait testimonial block */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-            <div className="absolute top-4 left-4 w-full max-w-[340px] aspect-[3/4] border border-[#111111]/10 rounded-2xl pointer-events-none z-0 hidden sm:block" />
-            <div className="w-full max-w-[340px] aspect-[3/4] overflow-hidden rounded-2xl border border-[#111111]/10 shadow-lg relative z-10">
-              <Image
-                src="/images/WhatsApp Image 2026-06-20 at 1.02.51 PM.jpeg"
-                alt="Happy Residents"
-                fill
-                className="object-cover"
-              />
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[340px] aspect-[3/4]">
+              {/* Offset Outline Border */}
+              <div className="absolute -top-4 -left-4 w-full h-full border border-[#111111]/10 rounded-2xl pointer-events-none z-0 hidden sm:block" />
+              
+              <div className="w-full h-full overflow-hidden rounded-2xl border border-[#111111]/10 shadow-lg relative z-10">
+                <Image
+                  src="/images/3.jpeg"
+                  alt="Happy Residents"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
 

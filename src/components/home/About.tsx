@@ -103,7 +103,7 @@ const About = () => {
               className="lg:col-span-6 relative h-[600px] md:h-[750px] overflow-hidden rounded-[32px]"
             >
               <Image
-                src="/images/Team2.png"
+                src="/images/Team3.png"
                 alt="People & Culture"
                 fill
                 className="object-cover"
