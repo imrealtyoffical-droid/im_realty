@@ -56,7 +56,7 @@ const WhyChooseUs = () => {
             className="lg:w-1/3"
           >
             <div className="w-16 h-[1px] bg-primary-red mb-8" />
-            <p className="text-[10px] uppercase tracking-[0.3em] text-silver/40 leading-loose">
+            <p className="text-[12px] uppercase tracking-[0.3em] text-black/80 leading-loose">
               Setting new standards in high-performance structural methodology and bespoke luxury delivery through vision and execution.
             </p>
           </motion.div>
@@ -71,7 +71,7 @@ const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.8 }}
-              className="bg-black p-10 group hover:bg-white/5 transition-all duration-500"
+              className="bg-black p-10 group hover:bg-red/5 transition-all duration-500"
             >
               <span className="text-primary-red text-[10px] font-bold tracking-widest block mb-6">0{index + 1}</span>
               <h3 className="text-xl font-bold uppercase tracking-tight mb-4 group-hover:text-primary-red transition-colors">{point.title}</h3>

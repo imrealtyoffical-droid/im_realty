@@ -188,23 +188,26 @@ export default function AmenitiesPage() {
           </div>
 
           {/* Hero image with premium offset border */}
-          <div className="lg:col-span-5 relative flex justify-center lg:justify-end">
-            <div className="absolute top-4 left-4 w-full max-w-[400px] aspect-[4/5] border border-[#111111]/10 rounded-2xl pointer-events-none z-0 hidden sm:block" />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.2 }}
-              className="w-full max-w-[400px] aspect-[4/5] overflow-hidden rounded-2xl border border-[#111111]/10 shadow-2xl relative z-10"
-            >
-              <Image
-                src="/images/Elevation.jpg"
-                alt="Architectural Masterpiece"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-            </motion.div>
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[400px] aspect-[4/5]">
+              {/* Offset Outline Border */}
+              <div className="absolute -top-4 -left-4 w-full h-full border border-[#111111]/10 rounded-2xl pointer-events-none z-0 hidden sm:block" />
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1.2 }}
+                className="w-full h-full overflow-hidden rounded-2xl border border-[#111111]/10 shadow-2xl relative z-10"
+              >
+                <Image
+                  src="/images/Elevation.jpg"
+                  alt="Premium Real Estate Elevation"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </motion.div>
+            </div>
           </div>
 
         </div>
@@ -500,8 +503,7 @@ export default function AmenitiesPage() {
             </p>
             <div className="pt-6 border-t border-[#EAEAEA] flex items-center gap-4">
               <div>
-                <h5 className="font-bold text-gray-800 text-sm md:text-base">Anjali & Rohit Sharma</h5>
-                <p className="text-xs text-[#666666] uppercase tracking-wider font-semibold mt-1">Sunraj Solitaire Residents</p>
+                <h5 className="font-bold text-gray-800 text-sm md:text-base">Anjali & Rohit </h5>
               </div>
             </div>
           </div>

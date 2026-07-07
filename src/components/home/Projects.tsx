@@ -56,35 +56,36 @@ const ProjectFeaturedVideo = () => {
       </motion.div>
 
       {/* Right Video Container with Offset Decorative Outline Grid */}
-      <div className="w-full lg:w-1/2 flex justify-center lg:justify-end relative">
+      <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
+        <div className="relative w-full max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px]">
+          {/* Offset Outline Border behind the video card for premium depth */}
+          <div className="absolute -top-4 -left-4 w-full h-full border border-[#0b3d2c]/20 rounded-lg pointer-events-none z-0 hidden sm:block" />
 
-        {/* Offset Outline Border behind the video card for premium depth */}
-        <div className="absolute top-4 right-4 w-full max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px] border border-[#0b3d2c]/20 rounded-lg pointer-events-none z-0 hidden sm:block" />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2 }}
+            className="w-full h-full overflow-hidden border border-black/10 bg-[#f1efe7] relative shadow-2xl rounded-lg z-10"
+          >
+            <video
+              ref={videoRef}
+              src="/images/advertice.mp4"
+              loop
+              playsInline
+              controls
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70 pointer-events-none" />
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.2 }}
-          className="w-full max-w-md aspect-[9/16] lg:aspect-auto h-auto lg:h-[600px] overflow-hidden border border-black/10 bg-[#f1efe7] relative shadow-2xl rounded-lg z-10"
-        >
-          <video
-            ref={videoRef}
-            src="/images/advertice.mp4"
-            loop
-            playsInline
-            controls
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-70 pointer-events-none" />
-
-          {/* Interactive Play/Live overlay indicator */}
-          <div className="absolute top-6 left-6 z-20 flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-3.5 py-2 rounded border border-white/10">
-            <span className="w-2 h-2 bg-[#c82222] rounded-full animate-ping" />
-            <span className="w-2 h-2 bg-[#c82222] rounded-full absolute" />
-            <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white">LIVE STREAM</span>
-          </div>
-        </motion.div>
+            {/* Interactive Play/Live overlay indicator */}
+            <div className="absolute top-6 left-6 z-20 flex items-center gap-2.5 bg-black/40 backdrop-blur-md px-3.5 py-2 rounded border border-white/10">
+              <span className="w-2 h-2 bg-[#c82222] rounded-full animate-ping" />
+              <span className="w-2 h-2 bg-[#c82222] rounded-full absolute" />
+              <span className="text-[8px] font-bold uppercase tracking-[0.2em] text-white">LIVE STREAM</span>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

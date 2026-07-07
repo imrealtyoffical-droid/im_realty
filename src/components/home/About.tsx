@@ -188,67 +188,52 @@ const About = () => {
 
           <div className="mb-12">
             <h3 className="text-4xl md:text-6xl font-bold uppercase text-white">
-              Happy Customers
+              Our Team
             </h3>
 
             <p className="text-silver/60 mt-6 max-w-3xl leading-relaxed">
-              The true measure of our success is the joy and satisfaction of our clients. 
-              We take immense pride in delivering exceptional experiences and helping families 
-              find their perfect homes. Every smile and handed-over key is a testament to our 
-              unwavering commitment to excellence.
+              Our team is the driving force behind I M REALTY&apos;s success.
+              Comprised of passionate professionals with expertise in real estate,
+              sales, customer relations and business development, we work together
+              to deliver exceptional experiences for our clients.
             </p>
           </div>
 
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-
-            <Image
-              src="/images/WhatsApp Image 2026-06-20 at 1.02.50 PM.jpeg"
-              alt="Happy Customer"
-              width={800}
-              height={600}
-              className="   w-full   rounded-[24px]   mb-6   break-inside-avoid   transition-all   duration-700   hover:scale-[1.03]   hover:-translate-y-2   hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]   shadow-2xl "
-            />
-
-            <Image
-              src="/images/WhatsApp Image 2026-06-20 at 1.02.50 PM (1).jpeg"
-              alt="Happy Customer"
-              width={800}
-              height={600}
-              className="   w-full   rounded-[24px]   mb-6   break-inside-avoid   transition-all   duration-700   hover:scale-[1.03]   hover:-translate-y-2   hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]   shadow-2xl "
-            />
-
-            <Image
-              src="/images/WhatsApp Image 2026-06-20 at 1.02.51 PM.jpeg"
-              alt="Happy Customer"
-              width={800}
-              height={600}
-              className="   w-full   rounded-[24px]   mb-6   break-inside-avoid   transition-all   duration-700   hover:scale-[1.03]   hover:-translate-y-2   hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]   shadow-2xl "
-            />
-
-            <Image
-              src="/images/WhatsApp Image 2026-06-20 at 1.02.51 PM (1).jpeg"
-              alt="Happy Customer"
-              width={800}
-              height={600}
-              className="   w-full   rounded-[24px]   mb-6   break-inside-avoid   transition-all   duration-700   hover:scale-[1.03]   hover:-translate-y-2   hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]   shadow-2xl "
-            />
-
-            <Image
-              src="/images/WhatsApp Image 2026-06-20 at 1.02.52 PM.jpeg"
-              alt="Happy Customer"
-              width={800}
-              height={600}
-              className="   w-full   rounded-[24px]   mb-6   break-inside-avoid   transition-all   duration-700   hover:scale-[1.03]   hover:-translate-y-2   hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]   shadow-2xl "
-            />
-
-            <Image
-              src="/images/WhatsApp Image 2026-06-20 at 1.02.53 PM.jpeg"
-              alt="Happy Customer"
-              width={800}
-              height={600}
-              className="   w-full   rounded-[24px]   mb-6   break-inside-avoid   transition-all   duration-700   hover:scale-[1.03]   hover:-translate-y-2   hover:shadow-[0_0_40px_rgba(255,255,255,0.08)]   shadow-2xl "
-            />
-
+            {[
+              { src: "/images/0.png", duration: 4.2, delay: 0 },
+              { src: "/images/1.jpeg", duration: 4.8, delay: 0.3 },
+              { src: "/images/2.jpeg", duration: 3.9, delay: 0.1 },
+              { src: "/images/3.jpeg", duration: 4.5, delay: 0.6 },
+              { src: "/images/4.jpeg", duration: 3.6, delay: 0.2 },
+              { src: "/images/5.jpeg", duration: 5.0, delay: 0.4 },
+              { src: "/images/6.jpeg", duration: 4.0, delay: 0.7 },
+              { src: "/images/7.png", duration: 4.6, delay: 0.5 },
+              { src: "/images/8.png", duration: 3.8, delay: 0.8 },
+              { src: "/images/9.png", duration: 4.4, delay: 0.9 },
+            ].map((img, idx) => (
+              <motion.div
+                key={idx}
+                animate={{
+                  y: [0, -10, 0]
+                }}
+                transition={{
+                  duration: img.duration,
+                  delay: img.delay,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="break-inside-avoid mb-6 cursor-pointer"
+              >
+                <Image
+                  src={img.src}
+                  alt="Happy Customer"
+                  width={800}
+                  height={600}
+                  className="w-full rounded-[24px] shadow-2xl border border-transparent transition-all duration-500 hover:shadow-[0_0_50px_rgba(255,52,71,0.8),_0_0_100px_rgba(255,52,71,0.4)] hover:border-[#ff3447]/40"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

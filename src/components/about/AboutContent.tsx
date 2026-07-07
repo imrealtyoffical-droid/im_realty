@@ -22,12 +22,6 @@ const otherTeamMembers = [
     role: "Relationship Manager",
     image: "/images/roshan.png",
     description: "As a Relationship Manager, Roshan bridges the gap between clients and developers. He builds lasting connections, ensuring that every client feels valued and supported throughout their real estate journey."
-  },
-  {
-    name: "Rushikesh Komaskar",
-    role: "Board Member",
-    image: "/images/rushikesh.png",
-    description: "Serving as a Board Member, Rushikesh brings strategic foresight and governance to I M REALTY. His insights help shape our long-term vision and ensure we remain at the forefront of the luxury real estate market."
   }
 ];
 
@@ -40,6 +34,9 @@ const AboutContent = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  const safeIndex = currentMemberIndex >= otherTeamMembers.length ? 0 : currentMemberIndex;
+
   return (
     <div className="bg-[#f9f8f3] text-[#1c1c1c] font-serif pt-24 min-h-screen">
 
@@ -123,17 +120,41 @@ const AboutContent = () => {
             Leadership & Partners
           </h2>
 
-          {/* Visionary 1 - Kaustubh */}
+          {/* Visionary 1 - Sachin */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-32">
-            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px]">
+            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
               <Image
-                src="/images/kaustubh .png"
-                alt="Kaustubh ( KK ) Krishnaraj"
+                src="/images/sachin.jpg"
+                alt="Sachin Sunil Pagare"
                 fill
-                className="object-cover shadow-lg"
+                className="object-cover"
               />
             </div>
             <div className="md:col-span-7 space-y-8">
+              <div>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Sachin Sunil Pagare</h3>
+                <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">Owner & Managing Director</p>
+              </div>
+              <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                <p>
+                  Sachin leads the operational strategy and business development efforts. He oversees structural partnerships
+                  with premier developers, establishing commercial agreements and managing transactional execution.
+                </p>
+                <p>
+                  His focus on transparency and client-first operations ensures that every sales mandate is handled with
+                  absolute efficiency, maintaining the high standards expected in luxury real estate transactions.
+                </p>
+                <p>
+                  With over fifteen years of corporate real estate experience, Sachin has orchestrated some of the region's largest developer sales mandates.
+                  He acts as the key interface for developer boards, aligning I M REALTY's sales teams with developers' financial goals and construction timelines to ensure project success.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Visionary 2 - Kaustubh */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-32">
+            <div className="md:col-span-7 space-y-8 md:order-1 order-2">
               <div>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Kaustubh ( KK ) Krishnaraj</h3>
                 <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">Owner & Creative Director</p>
@@ -154,51 +175,50 @@ const AboutContent = () => {
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Visionary 2 - Sachin */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-32">
-            <div className="md:col-span-7 space-y-8 md:order-1 order-2">
-              <div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Sachin Sunil Pagare</h3>
-                <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">Owner & Managing Director</p>
-              </div>
-              <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                <p>
-                  Sachin leads the operational strategy and business development efforts. He oversees structural partnerships
-                  with premier developers, establishing commercial agreements and managing transactional execution.
-                </p>
-                <p>
-                  His focus on transparency and client-first operations ensures that every sales mandate is handled with
-                  absolute efficiency, maintaining the high standards expected in luxury real estate transactions.
-                </p>
-                <p>
-                  With over fifteen years of corporate real estate experience, Sachin has orchestrated some of the region's largest developer sales mandates.
-                  He acts as the key interface for developer boards, aligning I M REALTY's sales teams with developers' financial goals and construction timelines to ensure project success.
-                </p>
-              </div>
-            </div>
-            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] md:order-2 order-1">
+            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] md:order-2 order-1 shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
               <Image
-                src="/images/sachin.jpg"
-                alt="Sachin Sunil Pagare"
+                src="/images/kaustubh .png"
+                alt="Kaustubh ( KK ) Krishnaraj"
                 fill
-                className="object-cover shadow-lg"
+                className="object-cover"
               />
             </div>
           </div>
 
-          {/* Visionary 3 - Pramila */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start">
-            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px]">
+          {/* Visionary 3 - Rushikesh */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-32">
+            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
               <Image
-                src="/images/Pramila.png"
-                alt="Pramila Krishnaraj"
+                src="/images/rushikesh.png"
+                alt="Rushikesh Komaskar"
                 fill
-                className="object-cover shadow-lg"
+                className="object-cover object-top"
               />
             </div>
             <div className="md:col-span-7 space-y-8">
+              <div>
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Rushikesh Komaskar</h3>
+                <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">Board Member & Legal Advisor</p>
+              </div>
+              <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
+                <p>
+                  As a Board Member and Legal Advisor, Rushikesh brings strategic foresight and strict governance to I M REALTY.
+                  His expertise ensures that every transaction is rooted in transparency and comprehensive legal compliance.
+                </p>
+                <p>
+                  He oversees the formulation of commercial agreements and structural partnerships, providing developers and high-net-worth buyers
+                  with absolute confidence and security throughout the acquisition process.
+                </p>
+                <p>
+                  Rushikesh's insights help shape our long-term vision, ensuring we remain at the forefront of the luxury real estate market while upholding the highest standards of professional integrity.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Visionary 4 - Pramila */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start">
+            <div className="md:col-span-7 space-y-8 md:order-1 order-2">
               <div>
                 <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Pramila Krishnaraj</h3>
                 <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">HR Head & Co-Owner</p>
@@ -220,6 +240,14 @@ const AboutContent = () => {
                 </p>
               </div>
             </div>
+            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] md:order-2 order-1 shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
+              <Image
+                src="/images/Pramila.png"
+                alt="Pramila Krishnaraj"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
 
         </div>
@@ -229,7 +257,7 @@ const AboutContent = () => {
           <h2 className="text-3xl md:text-5xl font-serif text-[#0b3d2c] mb-16 uppercase tracking-widest text-center">
             Our Core Team
           </h2>
-          
+
           <div className="relative h-[700px] md:h-[600px] lg:h-[700px] max-w-[1200px] mx-auto overflow-hidden bg-white shadow-xl rounded-sm">
             <AnimatePresence mode="wait">
               <motion.div
@@ -243,34 +271,33 @@ const AboutContent = () => {
                 {/* Left: Image */}
                 <div className="relative h-[300px] md:h-full w-full">
                   <Image
-                    src={otherTeamMembers[currentMemberIndex].image}
-                    alt={otherTeamMembers[currentMemberIndex].name}
+                    src={otherTeamMembers[safeIndex].image}
+                    alt={otherTeamMembers[safeIndex].name}
                     fill
                     className="object-cover object-top"
                   />
                 </div>
-                
+
                 {/* Right: Info */}
                 <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-white">
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest mb-4">
-                    {otherTeamMembers[currentMemberIndex].name}
+                    {otherTeamMembers[safeIndex].name}
                   </h3>
                   <p className="text-sm md:text-base font-bold text-[#ff3447] uppercase tracking-wider mb-8">
-                    {otherTeamMembers[currentMemberIndex].role}
+                    {otherTeamMembers[safeIndex].role}
                   </p>
                   <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-12">
-                    {otherTeamMembers[currentMemberIndex].description}
+                    {otherTeamMembers[safeIndex].description}
                   </p>
-                  
+
                   {/* Custom Progress Dots */}
                   <div className="flex space-x-3 mt-auto">
                     {otherTeamMembers.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => setCurrentMemberIndex(idx)}
-                        className={`w-12 h-1.5 transition-colors duration-300 ${
-                          idx === currentMemberIndex ? 'bg-[#ff3447]' : 'bg-gray-200 hover:bg-gray-300'
-                        }`}
+                        className={`w-12 h-1.5 transition-colors duration-300 ${idx === currentMemberIndex ? 'bg-[#ff3447]' : 'bg-gray-200 hover:bg-gray-300'
+                          }`}
                         aria-label={`View ${otherTeamMembers[idx].name}`}
                       />
                     ))}
