@@ -71,10 +71,10 @@ const AboutContent = () => {
 
         {/* 2. Header & Intro */}
         <div className="mb-20">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[#0b3d2c] mb-10 uppercase tracking-widest leading-tight">
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif text-[#0b3d2c] mb-8 uppercase tracking-widest leading-tight">
             Bridging Developers <br /> and Discerning Buyers
           </h1>
-          <div className="space-y-8 text-base md:text-lg lg:text-xl leading-relaxed text-gray-800 font-medium">
+          <div className="space-y-6 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600 font-normal">
             <p>
               I M REALTY is a premier real estate sales and consultancy enterprise. We represent
               distinguished real estate developers, managing the strategic marketing, positioning,
@@ -90,7 +90,7 @@ const AboutContent = () => {
 
         {/* 3. Dark Green Callout Box */}
         <div className="bg-[#ff3447] text-white p-10 md:p-16 shadow-xl mb-28 rounded-sm">
-          <p className="text-base md:text-lg lg:text-2xl leading-relaxed font-medium italic">
+          <p className="text-base md:text-lg lg:text-xl leading-relaxed font-normal italic">
             "We do not just list properties; we represent architectural masterpieces. By managing developer portfolios
             with precision and care, we ensure our clients gain access to unmatched investment opportunities and bespoke lifestyles."
           </p>
@@ -99,10 +99,10 @@ const AboutContent = () => {
 
         {/* 5. Values Section */}
         <div className="mb-28 border-t border-gray-200 pt-16">
-          <h2 className="text-3xl md:text-5xl font-serif text-[#0b3d2c] mb-10 uppercase tracking-widest">
+          <h2 className="text-2xl md:text-4xl font-serif text-[#0b3d2c] mb-6 uppercase tracking-widest">
             Beyond Sales: Developer Representation
           </h2>
-          <p className="text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
             For developers, we are an extension of their vision. We take charge of branding, marketing campaigns, client qualification, and sales execution,
             allowing developers to focus entirely on engineering and construction. For buyers, we are a trusted filter—curating only the finest properties,
             verifying legal clearances, and negotiating terms with transparency and professionalism.
@@ -111,10 +111,10 @@ const AboutContent = () => {
 
         {/* 6. People & Culture Section */}
         <div className="mb-28 border-t border-gray-200 pt-16">
-          <h2 className="text-3xl md:text-5xl font-serif text-[#0b3d2c] mb-10 uppercase tracking-widest">
+          <h2 className="text-2xl md:text-4xl font-serif text-[#0b3d2c] mb-6 uppercase tracking-widest">
             People & Culture
           </h2>
-          <div className="space-y-6 text-base md:text-lg lg:text-xl leading-relaxed text-gray-700">
+          <div className="space-y-4 text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
             <p>
               At I M REALTY, we believe great businesses are built by great people. We are committed to fostering a workplace founded on respect, integrity, equal opportunity, and professional growth.
             </p>
