@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
+import MissionVisionValues from "./MissionVisionValues";
 
 const otherTeamMembers = [
   {
@@ -126,12 +127,20 @@ const AboutContent = () => {
           </div>
         </div>
 
+      </div>
+
+      {/* 6.5 Mission, Vision & Core Values Section */}
+      <MissionVisionValues />
+
+      {/* Reopen Main Content Container */}
+      <div className="max-w-[1500px] mx-auto px-6 md:px-12 lg:px-16 py-24">
+
         {/* 7. Visionaries Section */}
         {/* 7. Leadership Section - Flip Cards */}
         <div className="mb-32 border-t border-gray-200 pt-20">
           <div className="text-center mb-16 font-sans">
             <span className="text-[#ff3447] text-xs font-bold uppercase tracking-[0.25em] block mb-3">Leadership</span>
-            <h2 className="text-3xl md:text-5xl font-sans font-extrabold text-[#22252a] tracking-tight leading-tight md:whitespace-nowrap mx-auto">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-extrabold text-[#22252a] tracking-tight leading-tight max-w-4xl mx-auto">
               The Masterminds Behind <span className="text-[#ff3447]">the Visionary Development</span>
             </h2>
           </div>
