@@ -137,16 +137,13 @@ const AboutContent = () => {
               </div>
               <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
                 <p>
-                  Sachin leads the operational strategy and business development efforts. He oversees structural partnerships
-                  with premier developers, establishing commercial agreements and managing transactional execution.
+                  Sachin Sunil Pagare is a young entrepreneur and MBA graduate with a passion for transforming the real estate experience through innovation, professionalism, and trust. His modern outlook and business expertise enable him to deliver value-driven solutions for every client.
                 </p>
                 <p>
-                  His focus on transparency and client-first operations ensures that every sales mandate is handled with
-                  absolute efficiency, maintaining the high standards expected in luxury real estate transactions.
+                  As the Owner & Managing Director of IM Realty, he leads the company with a customer-first approach, emphasizing transparency, integrity, and long-term relationships. His vision is to make property buying, selling, and investing a seamless and rewarding journey.
                 </p>
                 <p>
-                  With over fifteen years of corporate real estate experience, Sachin has orchestrated some of the region's largest developer sales mandates.
-                  He acts as the key interface for developer boards, aligning I M REALTY's sales teams with developers' financial goals and construction timelines to ensure project success.
+                  With a commitment to excellence and continuous growth, Sachin is dedicated to building IM Realty into a trusted and future-ready real estate brand. He believes every property is an opportunity to create lasting value and meaningful investments for clients.
                 </p>
               </div>
             </div>
