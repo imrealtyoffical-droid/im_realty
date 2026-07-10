@@ -6,6 +6,18 @@ import { useState, useEffect } from "react";
 
 const otherTeamMembers = [
   {
+    name: "Pramila Krishnaraj",
+    role: "HR Head & Co-Owner",
+    image: "/images/Pramila.png",
+    description: "As HR Head and Co-Owner, Pramila plays a vital role in building and managing I M REALTY's elite team. She oversees recruitment, training, structural development, and workplace culture initiatives, ensuring that every consultant embodies our core values of trust and professional integrity."
+  },
+  {
+    name: "Rushikesh Komaskar",
+    role: "Board Member & Legal Advisor",
+    image: "/images/rushikesh.png",
+    description: "Serving as a Board Member and Legal Advisor, Rushikesh brings strategic foresight and governance to I M REALTY. He oversees the formulation of commercial agreements and structural partnerships, ensuring that every transaction is rooted in transparency and strict legal compliance."
+  },
+  {
     name: "Kajol Rai",
     role: "SME (Sales Subject Matter Expert)",
     image: "/images/kajol.png",
@@ -115,138 +127,87 @@ const AboutContent = () => {
         </div>
 
         {/* 7. Visionaries Section */}
-        <div className="mb-32 border-t border-gray-200 pt-16">
-          <h2 className="text-3xl md:text-5xl font-serif text-[#0b3d2c] mb-20 uppercase tracking-widest">
-            Leadership & Partners
-          </h2>
-
-          {/* Visionary 1 - Sachin */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-32">
-            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
-              <Image
-                src="/images/sachin.jpg"
-                alt="Sachin Sunil Pagare"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="md:col-span-7 space-y-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Sachin Sunil Pagare</h3>
-                <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">Owner & Managing Director</p>
-              </div>
-              <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                <p>
-                  Sachin Sunil Pagare is a young entrepreneur and MBA graduate with a passion for transforming the real estate experience through innovation, professionalism, and trust. His modern outlook and business expertise enable him to deliver value-driven solutions for every client.
-                </p>
-                <p>
-                  As the Owner & Managing Director of IM Realty, he leads the company with a customer-first approach, emphasizing transparency, integrity, and long-term relationships. His vision is to make property buying, selling, and investing a seamless and rewarding journey.
-                </p>
-                <p>
-                  With a commitment to excellence and continuous growth, Sachin is dedicated to building IM Realty into a trusted and future-ready real estate brand. He believes every property is an opportunity to create lasting value and meaningful investments for clients.
-                </p>
-              </div>
-            </div>
+        {/* 7. Leadership Section - Flip Cards */}
+        <div className="mb-32 border-t border-gray-200 pt-20">
+          <div className="text-center mb-16 font-sans">
+            <span className="text-[#ff3447] text-xs font-bold uppercase tracking-[0.25em] block mb-3">Leadership</span>
+            <h2 className="text-3xl md:text-5xl font-sans font-extrabold text-[#22252a] tracking-tight leading-tight md:whitespace-nowrap mx-auto">
+              The Masterminds Behind <span className="text-[#ff3447]">the Visionary Development</span>
+            </h2>
           </div>
 
-          {/* Visionary 2 - Kaustubh */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-32">
-            <div className="md:col-span-7 space-y-8 md:order-1 order-2">
-              <div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Kaustubh ( KK ) Krishnaraj</h3>
-                <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">Owner & Creative Director</p>
-              </div>
-              <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                <p>
-                  As Owner and Creative Director, Kaustubh shapes the strategic identity and visual communication of
-                  I M REALTY's portfolio. His focus is on elevating how premium properties are presented and experienced
-                  by high-net-worth buyers.
-                </p>
-                <p>
-                  Believing that premium real estate is a synthesis of art and lifestyle, Kaustubh works closely with architectural
-                  firms and creative agencies to translate developers' visions into compelling narratives that drive buyer interest and premium sales.
-                </p>
-                <p>
-                  With a background in creative design and high-end brand consulting, he ensures that marketing assets, physical showrooms,
-                  and digital experiences match the architectural caliber of the properties we represent, establishing I M REALTY as the agency of choice for luxury developers.
-                </p>
-              </div>
-            </div>
-            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] md:order-2 order-1 shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
-              <Image
-                src="/images/kaustubh .png"
-                alt="Kaustubh ( KK ) Krishnaraj"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4 justify-center">
+            {[
+              {
+                name: "Sachin Sunil Pagare",
+                role: "Owner & Managing Director",
+                image: "/images/sachin.jpg",
+                objectPos: "object-center",
+                bio: [
+                  "An MBA graduate and young entrepreneur, Sachin leads IM Realty with a vision built on innovation, transparency, and trust. His customer-first approach and strategic mindset drive the company's commitment to delivering reliable real estate solutions and creating long-term value for every client."
+                ]
+              },
+              {
+                name: "Kaustubh ( KK ) Krishnaraj",
+                role: "Owner & Creative Director",
+                image: "/images/kaustubh .png",
+                objectPos: "object-center",
+                bio: [
+                  "A creative entrepreneur with a passion for branding and design, Kaustubh shapes the visual identity and marketing direction of IM Realty. Through innovative storytelling and thoughtful design, he ensures every client experiences a modern, professional, and memorable real estate journey."
+                ]
+              }
+            ].map((leader, index) => (
+              <div
+                key={index}
+                className="w-full h-[520px] cursor-pointer"
+                style={{ perspective: "1200px" }}
+              >
+                <motion.div
+                  className="relative w-full h-full"
+                  style={{ transformStyle: "preserve-3d" }}
+                  whileHover={{ rotateY: 180 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                >
+                  {/* Front Side */}
+                  <div
+                    className="absolute inset-0 w-full h-full bg-white rounded-2xl p-8 flex flex-col items-center justify-center border border-gray-100 shadow-lg text-center"
+                    style={{ backfaceVisibility: "hidden", WebkitBackfaceVisibility: "hidden" }}
+                  >
+                    <div className="relative w-60 h-60 rounded-full overflow-hidden border-4 border-gray-50 shadow-[0_0_30px_rgba(0,0,0,0.05)] mb-8">
+                      <Image
+                        src={leader.image}
+                        alt={leader.name}
+                        fill
+                        className={`object-cover ${leader.objectPos}`}
+                      />
+                    </div>
+                    <h3 className="text-2xl font-sans text-[#1e293b] font-bold uppercase tracking-wider leading-tight">
+                      {leader.name}
+                    </h3>
+                    <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-4 leading-relaxed">
+                      {leader.role}
+                    </p>
+                  </div>
 
-          {/* Visionary 3 - Rushikesh */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start mb-32">
-            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
-              <Image
-                src="/images/rushikesh.png"
-                alt="Rushikesh Komaskar"
-                fill
-                className="object-cover object-top"
-              />
-            </div>
-            <div className="md:col-span-7 space-y-8">
-              <div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Rushikesh Komaskar</h3>
-                <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">Board Member & Legal Advisor</p>
+                  {/* Back Side */}
+                  <div
+                    className="absolute inset-0 w-full h-full bg-[#ff3447] rounded-2xl p-10 flex flex-col items-center justify-center text-center text-white shadow-lg"
+                    style={{
+                      backfaceVisibility: "hidden",
+                      WebkitBackfaceVisibility: "hidden",
+                      transform: "rotateY(180deg)"
+                    }}
+                  >
+                    <div className="font-sans text-base md:text-lg lg:text-xl leading-relaxed tracking-wide text-white/95 space-y-4 overflow-y-auto max-h-[440px] pr-2">
+                      {leader.bio.map((p, pIdx) => (
+                        <p key={pIdx}>{p}</p>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-              <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                <p>
-                  As a Board Member and Legal Advisor, Rushikesh brings strategic foresight and strict governance to I M REALTY.
-                  His expertise ensures that every transaction is rooted in transparency and comprehensive legal compliance.
-                </p>
-                <p>
-                  He oversees the formulation of commercial agreements and structural partnerships, providing developers and high-net-worth buyers
-                  with absolute confidence and security throughout the acquisition process.
-                </p>
-                <p>
-                  Rushikesh's insights help shape our long-term vision, ensuring we remain at the forefront of the luxury real estate market while upholding the highest standards of professional integrity.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
-
-          {/* Visionary 4 - Pramila */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start">
-            <div className="md:col-span-7 space-y-8 md:order-1 order-2">
-              <div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-[#0b3d2c] font-bold uppercase tracking-widest">Pramila Krishnaraj</h3>
-                <p className="text-sm md:text-base font-bold text-gray-500 uppercase tracking-wider mt-2">HR Head & Co-Owner</p>
-              </div>
-              <div className="space-y-6 text-base md:text-lg lg:text-xl text-gray-700 leading-relaxed">
-                <p>
-                  As HR Head and Co-Owner, Pramila plays a vital role in building and managing I M REALTY's elite team.
-                  She believes that a company's greatest asset is its people and works to cultivate an inclusive, high-performance
-                  culture where operational staff and consultants thrive.
-                </p>
-                <p>
-                  Pramila oversees recruitment, structural development, and workplace culture initiatives, ensuring that
-                  every agent, consultant, and representative embodies our core values of trust and professional integrity.
-                </p>
-                <p>
-                  She designs and implements advanced training programs that equip our sales force with deep consultancy and advisory skills,
-                  shifting their roles from simple agents to trusted asset advisors. Under her guidance, I M REALTY has maintained a reputation
-                  for having the most professional workforce in the industry, which is a key reason developers entrust us with their exclusive inventory.
-                </p>
-              </div>
-            </div>
-            <div className="md:col-span-5 relative h-[450px] md:h-[600px] lg:h-[700px] md:order-2 order-1 shadow-2xl shadow-black/100 overflow-hidden rounded-sm">
-              <Image
-                src="/images/Pramila.png"
-                alt="Pramila Krishnaraj"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-
         </div>
 
         {/* Core Team - Auto Slider */}
